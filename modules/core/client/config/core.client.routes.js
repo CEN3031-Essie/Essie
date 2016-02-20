@@ -21,6 +21,13 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       url: '/forms',
       templateUrl: 'modules/core/client/views/forms.client.view.html'
     })
+    .state('create', {
+      url: '/create',
+      templateUrl: 'modules/core/client/views/create.client.view.html',
+      data: {
+        ignoreState: true
+      }
+    })
     .state('not-found', {
       url: '/not-found',
       templateUrl: 'modules/core/client/views/404.client.view.html',
