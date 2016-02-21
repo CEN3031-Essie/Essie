@@ -15,7 +15,6 @@
         <tr>
           <th>Form Code</th>
           <th>Form Name</th>
-          <th></th>
         </tr>
         <tr ng-repeat="form in forms | filter: query">
           <td>{{form.code}}</td>
@@ -24,6 +23,9 @@
           <td><input type = "submit" value = "remove"/></td>
         </tr>
       </table>
+    </div>
+    <div style= "text-align: center">
+    	<a class="btn btn-primary" ui-sref = "create">Create Form</a>
     </div>
     <img id="loader" ng-show="loading" src="/../../img/484.gif">
   </div>
