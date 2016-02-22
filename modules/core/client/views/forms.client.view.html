@@ -16,7 +16,7 @@
           <th>Form Code</th>
           <th>Form Name</th>
         </tr>
-        <tr ng-repeat="form in forms | filter: query">
+        <tr ng-repeat="form in forms track by $index | filter: query">
           <td>{{form.code}}</td>
           <td>{{form.name}}</td>
           <td><input type = "submit" value = "download"/></td>
@@ -25,12 +25,10 @@
       </table>
     </div>
     <div>
-      	<p>Upload a new form</p>
-      	<form name="upload" class="form" data-ng-submit="">
-    	<input type= "file" id="myFile" name="file" onchange="angular.element(this).scope().xmlToJson(this)"></input>
+      <p>Upload a new form</p>
+    	<input type= "file" id="myFile" name="file"></input>
     	<p>Click the upload button when you are ready to upload</p>
-    	<button type="submit">Upload</button>
-    	</form>
+    	<button ng-click="newForm()">Upload</button>
     </div>
     <img id="loader" ng-show="loading" src="/../../img/484.gif">
   </div>
