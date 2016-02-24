@@ -23,7 +23,10 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
     })
     .state('create', {
       url: '/create',
-      templateUrl: 'modules/core/client/views/create.client.view.html'
+      templateUrl: 'modules/core/client/views/create.client.view.html',
+      data: {
+        ignoreState: true
+      }
     })
     .state('not-found', {
       url: '/not-found',

@@ -10,24 +10,29 @@
       <strong ng-bind="success"></strong>
     </div>
 
-    <div class="tableWrapper">
+    
+    <div class="tableWrapper" id = "table">
       <table class="table table-striped table-hover">
         <tr>
-          <th>Form Code</th>
           <th>Form Name</th>
         </tr>
-        <tr ng-repeat="form in forms | filter: query">
-          <td>{{form.code}}</td>
+        <tr ng-repeat="form in forms track by $index | filter: query">
           <td>{{form.name}}</td>
+          <td><input type = "submit" value = "download" id = "downloadbutton"/></td>
+          <td><input type = "submit" value = "delete" ng-click = "delete(form)" id = "deletebutton"/></td>
         </tr>
       </table>
       <div style="text-align: center">
         <a class = "btn btn-primary" ui-sref = "create">Create Form</a>
       </div>
     </div>
+    <div>
+      <p>Upload a new form</p>
+    	<input type= "file" id="myFile" name="file"></input>
+    	<p>Click the upload button when you are ready to upload</p>
+    	<button ng-click="newForm()">Upload</button>
+    </div>
     <img id="loader" ng-show="loading" src="/../../img/484.gif">
   </div>
 </div>
-
-
 </section>
