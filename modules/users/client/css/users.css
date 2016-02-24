@@ -34,3 +34,19 @@
   min-height: 150px;
   max-height: 150px;
 }
+
+.gatorlink-btn {
+    color: black;
+    border-color: black;
+    width: 300px;
+    font-size: 20px;
+}
+.signin-form{
+    background-color: lightgray;
+}
+.login-form {
+    background-color: white;
+    border: 15px solid;
+    border-radius: 15px;
+    border-color: white;
+}
