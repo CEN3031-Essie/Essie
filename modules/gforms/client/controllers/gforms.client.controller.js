@@ -16,11 +16,17 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
+    vm.isAdmin = isAdmin;
+
+    //checks to see if the user is an admin before they can view the edit/delete buttons for the individual forms
+    function isAdmin() {
+      return vm.authentication.user.roles.indexOf('admin') > -1;
+    }
 
     // Remove existing GForm
     function remove() {
       if (confirm('Are you sure you want to delete?')) {
-        vm.gform.$remove($state.go('gforms.list'));
+        vm.gform.$remove($state.go('gforms.list', {}, { reload: true }));
       }
     }
 
