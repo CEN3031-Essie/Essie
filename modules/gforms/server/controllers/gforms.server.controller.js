@@ -27,14 +27,14 @@ exports.create = function (req, res) {
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-        transporter.sendMail({
+      transporter.sendMail({
         from: 'EssieForms@email.com',
         to: 'rgoldblum84@gmail.com',
         subject: 'Succesful New Form',
         text: 'Congrats ' + gform.user.firstName + '! You have succesfully submited ' + gform.title + '.'
-        });
+      });
 
-        res.json(gform);
+      res.json(gform);
     }
   });
 };
