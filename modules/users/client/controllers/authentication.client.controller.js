@@ -8,9 +8,9 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
     // Get an eventual error defined in the URL query string:
     $scope.error = $location.search().err;
 
-    // If user is signed in then redirect back to the forms list
+    // If user is signed in then redirect back to the landing page
     if ($scope.authentication.user) {
-      $location.path('/gforms.list');
+      $state.go($state.previous.state.name || 'home', $state.previous.params);
     }
 
     $scope.signup = function (isValid) {
@@ -46,9 +46,8 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
         // If successful we assign the response to the global user model
         $scope.authentication.user = response;
 
-                                                                      // And redirect to the previous or home page
-          //after sign in, will route to the list of forms                                                         
-        $state.go('gforms.list', $state.previous.params);           // $state.go($state.previous.state.name || 'home', $state.previous.params);
+        // And redirect to the previous or home page
+        $state.go($state.previous.state.name || 'home', $state.previous.params);
 
       }).error(function (response) {
         $scope.error = response.message;
