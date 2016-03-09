@@ -37,6 +37,11 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       data: {
         ignoreState: true
       }
+    })
+
+    .state('temp', {
+      url: '/temp',
+      templateUrl: 'modules/core/client/views/basic.html',
     });
   }
 ]);
