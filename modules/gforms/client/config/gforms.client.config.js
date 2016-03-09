@@ -9,7 +9,7 @@
 
   function menuConfig(Menus) {
     Menus.addMenuItem('topbar', {
-      title: 'GForms',
+      title: 'Forms',
       state: 'gforms',
       type: 'dropdown',
       roles: ['*']
@@ -17,13 +17,13 @@
 
     // Add the dropdown list item
     Menus.addSubMenuItem('topbar', 'gforms', {
-      title: 'List GForms',
+      title: 'List Forms',
       state: 'gforms.list'
     });
 
     // Add the dropdown create item
     Menus.addSubMenuItem('topbar', 'gforms', {
-      title: 'Create GForm',
+      title: 'Create Form',
       state: 'gforms.create',
       roles: ['user']
     });
