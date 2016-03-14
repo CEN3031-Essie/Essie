@@ -6,6 +6,11 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
     $scope.$state = $state;
     $scope.authentication = Authentication;
 
+    // Redirect to user signin if not signed in
+    if (!$scope.authentication.user){
+      $state.go('authentication.signin');
+    }
+
     // Get the topbar menu
     $scope.menu = Menus.getMenu('topbar');
 
