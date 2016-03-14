@@ -1,50 +1,135 @@
 <div class="container" ng-controller="HeaderController" id = "header">
-  <div class="navbar-header">
-    <button class="navbar-toggle" type="button" ng-click="toggleCollapsibleMenu()">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a ui-sref="home" class="navbar-brand">ESSIE</a>
-  </div>
-  <nav class="collapse navbar-collapse" uib-collapse="!isCollapsed" role="navigation">
-    <!--ul class="nav navbar-nav" ng-if="menu.shouldRender(authentication.user);">
-      <li ng-repeat="item in menu.items | orderBy: 'position'" ng-if="item.shouldRender(authentication.user);" ng-switch="item.type" ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" class="{{item.class}}" uib-dropdown="item.type === 'dropdown'">
-        <a ng-switch-when="dropdown" class="dropdown-toggle" uib-dropdown-toggle role="button">{{::item.title}}&nbsp;<span class="caret"></span></a>
-        <ul ng-switch-when="dropdown" class="dropdown-menu">
-          <li ng-repeat="subitem in item.items | orderBy: 'position'" ng-if="subitem.shouldRender(authentication.user);" ui-sref-active="active">
-            <a ui-sref="{{subitem.state}}" ng-bind="subitem.title"></a>
-          </li>
+  <a href="#main" id="skip-link" class="visuallyhidden focusable">Skip to main content</a>
+
+  <div class="header unit">
+    <a ui-sref="home" class="logo"><img src="modules/core/client/img/brand/UF_LOGO.svg" alt="logo-uf" style="width : -1px; height : -1px;     " class=""></a>
+    <a href="/" class="logo mobile"><span class="icon-svg logo-unit"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/webservicesitufledu/images/ufit_ws_logo2.svg#logo"></use></svg><span class="visuallyhidden">Web Services</span></span></a>
+    <div class="menu-wrap">
+      <div class="main-menu-wrap">
+        <a href="/"><span class="icon-svg logo-unit"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/webservicesitufledu/images/ufit_ws_logo2.svg#logo"></use></svg><span class="visuallyhidden">Web Services</span></span></a>
+        <ul>
+        <li><a href="/about/" class="main-menu-link"><span>About</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
+<div class="dropdown"><ul class="col-md-6">
+<li><a href="/about/our-team/">Our Team</a></li>
+<li><a href="/about/operations/">Operations</a></li>
+<li><a href="/about/responsibilities/">Responsibilities</a></li>
+<li><a href="/about/policies/">Policies</a></li>
+
+
+
+
+
+</ul><ul class="col-md-6"><li><a href="/about/accessibility-recommendations/">Accessibility Recommendations</a></li><li><a href="/about/best-practices/">Best Practices</a></li><li><a href="http://www.identity.ufl.edu/policies-guidelines/web/">Graphical Standards</a></li><li><a href="http://www.it.ufl.edu/policies/web-related/corporate-support/">Recognizing Corporate Supporters on the Web</a></li></ul></div>
+</li><li><a href="/templates/" class="main-menu-link"><span>Templates</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
+<div class="dropdown"><ul class="col-md-6">
+<li><a href="/templates/uf-2011/">UF 2011</a></li>
+<li><a href="/templates/uf-2015/">UF 2015</a></li>
+
+
+</ul><ul class="col-md-6"><li><a href="/templates/oneuf-transition/">ONE.UF Transition</a></li></ul></div>
+</li><li><a href="/terminalfour/" class="main-menu-link"><span>TERMINALFOUR</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
+<div class="dropdown"><ul class="col-md-6">
+<li><a href="/terminalfour/getting-started/">Getting Started with T4</a></li>
+<li><a href="/terminalfour/downloads/">Downloads &amp; Videos</a></li>
+<li><a href="/terminalfour/version-8-overview/">Version 8 Overview</a></li>
+
+
+
+
+</ul><ul class="col-md-6"><li><a href="/terminalfour/hosting/">Hosting</a></li><li><a href="/terminalfour/hear-from-t4-users/">Hear from T4 Users</a></li><li><a href="/terminalfour/uf-2015-template/">UF 2015 Template</a></li></ul></div>
+</li><li><a href="/faqs/" class="main-menu-link"><span>FAQs</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
+<div class="dropdown"><ul class="col-md-6">
+<li><a href="/faqs/general/">General</a></li>
+<li><a href="/faqs/terminalfour/">TERMINALFOUR</a></li>
+
+
+</ul><ul class="col-md-6"><li><a href="/faqs/uf-2011-template/">UF 2011 Template</a></li></ul></div>
+</li><li><a href="/contact/" class="main-menu-link"><span>Contact</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
+<div class="dropdown"><ul class="col-md-6">
+<li><a href="/contact/work-request/">Work Request</a></li>
+<li><a href="/contact/captioning-request-form/">Captioning Request Form</a></li>
+<li><a href="/contact/terminalfour-request-form/">TERMINALFOUR Request Form</a></li>
+
+
+
+</ul><ul class="col-md-6"><li><a href="/contact/terminalfour-feedback/">TERMINALFOUR Feedback</a></li><li><a href="/contact/terminalfour-survey/">TERMINALFOUR Survey</a></li></ul></div>
+</li>
         </ul>
-        <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
-      </li>
-    </ul -->
-    <ul class="nav navbar-nav navbar-right" ng-hide="authentication.user">
-      <li ui-sref-active="active">
-        <a ui-sref="authentication.signup">Sign Up</a>
-      </li>
-      <li class="divider-vertical"></li>
-      <li ui-sref-active="active">
-        <a ui-sref="authentication.signin">Sign In</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right" ng-show="authentication.user">
-      <li class="dropdown" uib-dropdown>
-        <a class="dropdown-toggle user-header-dropdown-toggle" uib-dropdown-toggle role="button">
-          <img ng-src="{{authentication.user.profileImageURL}}" alt="{{authentication.user.displayName}}" class="header-profile-image" />
-          <span ng-bind="authentication.user.displayName"></span> <b class="caret"></b>
+      </div>
+      <div class="aux-menu-wrap">
+          <ul class="aux-nav"><li class="audience-link"><a href="http://www.ufl.edu/students/" data-ufl-audience-preference="current-students" class="">Current Students</a></li><li class="audience-link"><a href="http://www.ufl.edu/visitors/" data-ufl-audience-preference="family-visitors" class="">Family &amp; Visitors</a></li><li class="audience-link"><a href="http://www.ufl.edu/staff/" data-ufl-audience-preference="faculty-staff" class="">Faculty &amp; Staff</a></li>
+<li><a href="http://news.ufl.edu">News</a></li>
+<li><a href="http://calendar.ufl.edu">Calendar</a></li>
+<li><a href="http://www.ufl.edu/about/offices-services/">Offices &amp; Services</a></li>
+<li><a href="https://directory.ufl.edu">Directory</a></li>
+<li><a href="http://uff.ufl.edu/Giving/WhyGive.asp">Giving</a></li>
+<li><a href="http://ufhealth.org">UF Health</a></li>
+<li><a href="http://ifas.ufl.edu">UF IFAS</a></li>
+</ul>
+          <div class="audience-nav-wrap"><a href="#" class="cur-audience">Welcome to UF</a><span class="arw-right icon-svg"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#arw-down"></use></svg></span><ul>
+<li><a href="http://www.ufl.edu/students/" data-ufl-audience-preference="current-students" class="audience-link">Current Students</a></li>
+<li><a href="http://www.ufl.edu/visitors/" data-ufl-audience-preference="family-visitors" class="audience-link">Family &amp; Visitors</a></li>
+<li><a href="http://www.ufl.edu/staff/" data-ufl-audience-preference="faculty-staff" class="audience-link">Faculty &amp; Staff</a></li>
+</ul></div>
+      </div>
+      <a href="#" class="btn-show-aux">
+              <span class="icon-svg icon-menu">
+              <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#menu"></use>
+              </svg>
+          </span>
+              <span class="icon-svg icon-close">
+              <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#close"></use>
+              </svg>
+          </span>
         </a>
-        <ul class="dropdown-menu" role="menu">
-          <li ui-sref-active="active" ng-repeat="item in accountMenu.items">
-            <a ui-sref="{{item.state}}" ng-bind="item.title"></a>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a href="/api/auth/signout" target="_self">Signout</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+      <form action="http://search.ufl.edu/search" method="get" class="search-wrap">
+          <input type="hidden" name="source" value="web">
+          <label for="query_desktop" class="visuallyhidden">Search UF</label>
+          <input type="text" id="query_desktop" name="query">
+          <label for="submit_desktop" class="visuallyhidden">Submit</label>
+          <button type="submit" id="submit_desktop" name="submit" class="btn-search">
+              <span class="icon-svg">
+              <svg>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#search"></use>
+              </svg>
+            </span>
+          </button>
+        </form>
+    </div>
+  
+    <div class="mobile-dropdown-wrap"></div>
+  
+      <form action="http://search.ufl.edu/search" method="get" class="search-wrap mobile">
+          <input type="hidden" name="source" value="web">
+          <label for="query_mobile" class="visuallyhidden">Search UF</label>
+          <input type="text" id="query_mobile" name="query">
+          <label for="submit_mobile" class="visuallyhidden">Submit</label>
+      <button type="submit" id="submit_mobile" class="btn-search">
+          <span class="icon-svg">
+          <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#search"></use>
+          </svg>
+        </span>
+      </button>
+    </form>
+  
+    <a href="#" class="btn-menu">
+          <span class="icon-svg icon-menu">
+          <svg>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#menu"></use>
+          </svg>
+      </span>
+          <span class="icon-svg icon-close">
+          <svg>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#close"></use>
+          </svg>
+      </span>
+    </a>
+  </div>
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js"></script>
+
 </div>
