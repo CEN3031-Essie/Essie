@@ -7,7 +7,7 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
     $scope.authentication = Authentication;
 
     // Redirect to user signin if not signed in
-    if (!$scope.authentication.user){
+    if (!$state.includes('home') && !$scope.authentication.user){
       $state.go('authentication.signin');
     }
 

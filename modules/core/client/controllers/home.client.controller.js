@@ -5,10 +5,6 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
     // This provides Authentication context.
     $scope.authentication = Authentication;
 
-    if (!$scope.authentication.user){
-      $state.go('authentication.signin');
-    }
-
     // this function will require the user to login before they can view the forms page
     $scope.goToForms = function() {
       if($scope.authentication.user) {
