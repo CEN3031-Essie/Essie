@@ -20,5 +20,37 @@
       <span ng-if="!vm.gform.user">Deleted User</span>
     </em>
   </small>
+  <form>
+    First Name: <input type="text" name="fname">
+    Last Name: <input type="text" name="lname">
+    UFID: <input type="text" name="ufid">
+    Email: <input type="text" name="email">
+    Professor 1 
+    <select name="Professor1">
+      <option value=""></option>
+      <option value="Bob">Bob</option>
+      <option value="Ross">Ross</option>
+      <option value="John">John</option>
+      <option value="Cena">Cena</option>  
+    </select>
+    <br></br>
+    Professor 2 
+    <select name="Professor2">
+      <option value=""></option>
+      <option value="Bob">Bob</option>
+      <option value="Ross">Ross</option>
+      <option value="John">John</option>
+      <option value="Cena">Cena</option>  
+    </select>
+    <br></br>
+    Professor 3 
+    <select name="Professor3">
+      <option value=""></option>
+      <option value="Bob">Bob</option>
+      <option value="Ross">Ross</option>
+      <option value="John">John</option>
+      <option value="Cena">Cena</option>  
+    </select>
+  </form>
   <p class="lead" ng-bind="vm.gform.content"></p>
 </section>
