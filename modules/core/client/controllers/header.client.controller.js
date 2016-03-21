@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus',
-  function ($scope, $state, Authentication, Menus) {
+angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus', '$http',
+  function ($scope, $state, Authentication, Menus, $http) {
     // Expose view variables
     $scope.$state = $state;
     $scope.authentication = Authentication;
@@ -10,6 +10,26 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
     if (!$state.includes('home') && !$scope.authentication.user){
       $state.go('authentication.signin');
     }
+
+    // $http({
+    //   method: 'GET',
+    //   url: '/api/users/me'
+    // }).then(function successCallback(response) {
+    //   $scope.user = response.data;
+    // }, function errorCallback(response) {
+    //   console.log("Error");
+    // });
+
+    $http.get('/api/users/me').success(function (res) {
+        console.log(res.data);
+        $scope.user = res.data;
+    }).error(function (err) {
+        console.log('Error');
+        $scope.error = err.message;
+        console.log($scope.error);
+    });
+
+    console.log($scope.user);
 
     // Get the topbar menu
     $scope.menu = Menus.getMenu('topbar');
