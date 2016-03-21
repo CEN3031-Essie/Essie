@@ -11,15 +11,6 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
       $state.go('authentication.signin');
     }
 
-    // $http({
-    //   method: 'GET',
-    //   url: '/api/users/me'
-    // }).then(function successCallback(response) {
-    //   $scope.user = response.data;
-    // }, function errorCallback(response) {
-    //   console.log("Error");
-    // });
-
     $http.get('/api/users/me').success(function (res) {
         console.log(res.data);
         $scope.user = res.data;
