@@ -29,7 +29,7 @@ exports.create = function (req, res) {
     } else {
       transporter.sendMail({
         from: 'EssieForms@email.com',
-        to: 'rgoldblum84@gmail.com',
+        to: gform.user.email,
         subject: 'Succesful New Form',
         text: 'Congrats ' + gform.user.firstName + '! You have succesfully submited ' + gform.title + '.'
       });
