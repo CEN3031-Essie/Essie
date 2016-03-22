@@ -12,4 +12,4 @@
             $state.go($state.previous.state.name || 'home', $state.previous.params);
         }
     }
-})
+})();

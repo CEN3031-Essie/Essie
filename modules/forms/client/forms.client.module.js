@@ -2,6 +2,6 @@
     'use strict';
 
     app.registerModule('forms');
-    app.registerModule('forms.routes', ['ui-router']);
-    
+    app.registerModule('forms.routes', ['ui.router']);
+
 })(ApplicationConfiguration);
