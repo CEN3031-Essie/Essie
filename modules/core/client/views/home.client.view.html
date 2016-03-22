@@ -1,23 +1,9 @@
 <section ng-controller="HomeController">
-  <div class="jumbotron text-center">
-
-    
-    
-    
-
-    <div class="row" ng-show="vm.authentication.user._id == vm.form.user._id">
-      <p>
-        <a class="btn btn-primary" ng-if = "authentication.user" ui-sref = "gforms.list">Forms</a>
-        <a class="btn btn-primary" ng-if = "!authentication.user" ui-sref = "authentication.signin">Forms</a>
-      </p>
-    </div>
-
-
-
-
-    </div>
-
-
-
-
+    <div class="jumbotron text-center">
+         <div class="row">
+          <p>
+            <button class="btn btn-primary" type="button" ng-click="logOut()">Log Out</button>
+          </p>
+        </div>
+     </div>
 </section>
