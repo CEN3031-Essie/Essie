@@ -11,16 +11,15 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
       $state.go('authentication.signin');
     }
 
+    // Makes current user object accessible
     $http.get('/api/users/me').success(function (res) {
-        console.log(res.data);
-        $scope.user = res.data;
+        $scope.user = res;
     }).error(function (err) {
         console.log('Error');
         $scope.error = err.message;
         console.log($scope.error);
     });
 
-    console.log($scope.user);
 
     // Get the topbar menu
     $scope.menu = Menus.getMenu('topbar');
