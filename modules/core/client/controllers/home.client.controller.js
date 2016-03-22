@@ -17,6 +17,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 
     $scope.logOut = function () {
         $scope.authentication.user = null;
+        $state.go('authentication.signin');
     };
   }
 ]);
