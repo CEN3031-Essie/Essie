@@ -9,7 +9,7 @@
       <div class="main-menu-wrap">
         <a href="/"><span class="icon-svg logo-unit"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/webservicesitufledu/images/ufit_ws_logo2.svg#logo"></use></svg><span class="visuallyhidden">Web Services</span></span></a>
         <ul>
-        <li><a href="/about/" class="main-menu-link"><span>About</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
+        <li><a href="http://www.essie.ufl.edu/news_and_events/" class="main-menu-link"><span>News & Events</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.essie.ufl.edu/news_and_events/" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
 <div class="dropdown"><ul class="col-md-6">
 <li><a href="/about/our-team/">Our Team</a></li>
 <li><a href="/about/operations/">Operations</a></li>
@@ -21,14 +21,15 @@
 
 
 </ul><ul class="col-md-6"><li><a href="/about/accessibility-recommendations/">Accessibility Recommendations</a></li><li><a href="/about/best-practices/">Best Practices</a></li><li><a href="http://www.identity.ufl.edu/policies-guidelines/web/">Graphical Standards</a></li><li><a href="http://www.it.ufl.edu/policies/web-related/corporate-support/">Recognizing Corporate Supporters on the Web</a></li></ul></div>
-</li><li><a href="/templates/" class="main-menu-link"><span>Templates</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
+</li><li><a href="/templates/" ng-if = "authentication.user" ui-sref = "gforms.list" class="main-menu-link"><span>Forms</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
+</li><li><a href="/templates/" ng-if = "!authentication.user" ui-sref = "authentication.signin" class="main-menu-link"><span>Forms</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
 <div class="dropdown"><ul class="col-md-6">
 <li><a href="/templates/uf-2011/">UF 2011</a></li>
 <li><a href="/templates/uf-2015/">UF 2015</a></li>
 
 
 </ul><ul class="col-md-6"><li><a href="/templates/oneuf-transition/">ONE.UF Transition</a></li></ul></div>
-</li><li><a href="/terminalfour/" class="main-menu-link"><span>TERMINALFOUR</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
+</li><li><a href="http://www.essie.ufl.edu/about_us/" class="main-menu-link"><span>About Us</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
 <div class="dropdown"><ul class="col-md-6">
 <li><a href="/terminalfour/getting-started/">Getting Started with T4</a></li>
 <li><a href="/terminalfour/downloads/">Downloads &amp; Videos</a></li>
@@ -38,22 +39,14 @@
 
 
 </ul><ul class="col-md-6"><li><a href="/terminalfour/hosting/">Hosting</a></li><li><a href="/terminalfour/hear-from-t4-users/">Hear from T4 Users</a></li><li><a href="/terminalfour/uf-2015-template/">UF 2015 Template</a></li></ul></div>
-</li><li><a href="/faqs/" class="main-menu-link"><span>FAQs</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
+</li><li><a href="http://www.essie.ufl.edu/people/" class="main-menu-link"><span>People</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
 <div class="dropdown"><ul class="col-md-6">
 <li><a href="/faqs/general/">General</a></li>
 <li><a href="/faqs/terminalfour/">TERMINALFOUR</a></li>
 
 
 </ul><ul class="col-md-6"><li><a href="/faqs/uf-2011-template/">UF 2011 Template</a></li></ul></div>
-</li><li><a href="/contact/" class="main-menu-link"><span>Contact</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
-<div class="dropdown"><ul class="col-md-6">
-<li><a href="/contact/work-request/">Work Request</a></li>
-<li><a href="/contact/captioning-request-form/">Captioning Request Form</a></li>
-<li><a href="/contact/terminalfour-request-form/">TERMINALFOUR Request Form</a></li>
 
-
-
-</ul><ul class="col-md-6"><li><a href="/contact/terminalfour-feedback/">TERMINALFOUR Feedback</a></li><li><a href="/contact/terminalfour-survey/">TERMINALFOUR Survey</a></li></ul></div>
 </li>
         </ul>
       </div>
