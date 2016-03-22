@@ -17,10 +17,6 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       url: '/',
       templateUrl: 'modules/core/client/views/home.client.view.html'
     })
-    .state('forms', {
-      url: '/forms',
-      templateUrl: 'modules/core/client/views/forms.client.view.html'
-    })
     .state('create', {
       url: '/create',
       templateUrl: 'modules/core/client/views/create.client.view.html',
@@ -42,7 +38,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         ignoreState: true
       }
     })
-    
+
     .state('forbidden', {
       url: '/forbidden',
       templateUrl: 'modules/core/client/views/403.client.view.html',

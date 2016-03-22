@@ -10,7 +10,7 @@ module.exports = function (app) {
   // GForms collection routes
   app.route('/api/gforms').all(gformsPolicy.isAllowed)
     .get(gforms.list)
-    .post(gforms.create); 
+    .post(gforms.create);
 
   // Single gform routes
   app.route('/api/gforms/:gformId').all(gformsPolicy.isAllowed)
