@@ -5,7 +5,7 @@
  */
 var path = require('path'),
   mongoose = require('mongoose'),
-  GForm = mongoose.model('GForm'),
+  PhDCommitteeForm = mongoose.model('PhDCommitteeForm'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   nodemailer = require('nodemailer'),
   smtpTransport = require('nodemailer-smtp-transport');
@@ -15,13 +15,13 @@ var transporter = nodemailer.createTransport(
 );
 
 /**
- * Create an gform
+ * Create an form
  */
 exports.create = function (req, res) {
-  var gform = new GForm(req.body);
-  gform.user = req.user;
+  var form = new PhDCommitteeForm(req.body);
+  form.user = req.user;
 
-  gform.save(function (err) {
+  form.save(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
@@ -31,93 +31,93 @@ exports.create = function (req, res) {
         from: 'EssieForms@email.com',
         to: 'rgoldblum84@gmail.com',
         subject: 'Succesful New Form',
-        text: 'Congrats ' + gform.user.firstName + '! You have succesfully submited ' + gform.title + '.'
+        text: 'Congrats ' + form.user.firstName + '! You have succesfully submited ' + form.title + '.'
       });
 
-      res.json(gform);
+      res.json(form);
     }
   });
 };
 
 /**
- * Show the current gform
+ * Show the current form
  */
 exports.read = function (req, res) {
-  res.json(req.gform);
+  res.json(req.form);
 };
 
 /**
- * Update an gform
+ * Update an form
  */
-exports.update = function (req, res) {
-  var gform = req.gform;
+// exports.update = function (req, res) {
+//   var form = req.form;
 
-  gform.title = req.body.title;
-  gform.content = req.body.content;
+//   form.title = req.body.title;
+//   form.content = req.body.content;
 
-  gform.save(function (err) {
-    if (err) {
-      return res.status(400).send({
-        message: errorHandler.getErrorMessage(err)
-      });
-    } else {
-      res.json(gform);
-    }
-  });
-};
+//   form.save(function (err) {
+//     if (err) {
+//       return res.status(400).send({
+//         message: errorHandler.getErrorMessage(err)
+//       });
+//     } else {
+//       res.json(form);
+//     }
+//   });
+// };
 
 /**
- * Delete an gform
+ * Delete an form
  */
 exports.delete = function (req, res) {
-  var gform = req.gform;
+  var form = req.form;
 
-  gform.remove(function (err) {
+  form.remove(function (err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(gform);
+      res.json(form);
     }
   });
 };
 
 /**
- * List of GForms
+ * List of PhDCommitteeForms
  */
 exports.list = function (req, res) {
-  GForm.find().sort('-created').populate('user', 'displayName').exec(function (err, gforms) {
+  PhDCommitteeForm.find().sort('-created').populate('user', 'full_Name').exec(function (err, forms) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(gforms);
+      res.json(forms);
     }
   });
 };
 
 /**
- * GForm middleware
+ * PhDCommitteeForm middleware
  */
-exports.gformByID = function (req, res, next, id) {
+exports.formByID = function (req, res, next, id) {
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
-      message: 'GForm is invalid'
+      message: 'PhDCommitteeForm is invalid'
     });
   }
 
-  GForm.findById(id).populate('user', 'displayName').exec(function (err, gform) {
+  PhDCommitteeForm.findById(id).populate('user', 'full_Name').exec(function (err, form) {
     if (err) {
       return next(err);
-    } else if (!gform) {
+    } else if (!form) {
       return res.status(404).send({
-        message: 'No gform with that identifier has been found'
+        message: 'No form with that identifier has been found'
       });
     }
-    req.gform = gform;
+    req.form = form;
     next();
   });
 };

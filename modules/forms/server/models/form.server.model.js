@@ -37,6 +37,12 @@ var PhDCommitteeSchema = new Schema({
     default: '',
     trim: true
   },
+  full_Name: {
+    type: String,
+    default: '',
+    trim: true,
+    required: true
+  },
   uf_id: {
     type: String,
     default: '',
