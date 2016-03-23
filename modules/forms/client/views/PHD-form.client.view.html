@@ -3,11 +3,11 @@
 		<h1>Ph.D. Program Supervisory Committee</h1>
 	</div>
 	<div>
-		<form class="essie-form" ng-submit="submitForm()">
+		<form class="essie-form">
 			<div class="form-group">
-				Term: <input type="text" class="form-control" ng-model="form.term" placeholder="Spring/Summer/Fall">
+				Term: <input type="text" class="form-control" ng-model="form.term" placeholder="Spring/Summer/Fall, Year">
 			</div>
-			Student Name:<br>
+			<h2>Student Information:</h2><br>
 			<div>
 				<div class="form-group">
 					Last: <input type="text" class="form-control" ng-model="form.last_name">
@@ -23,7 +23,7 @@
 			UF-ID #: <input type="text" ng-model="form.ufid">
 			E-mail address: <input type="text" ng-model="form.email"><br><br>
 
-			Members of Committee: <br><br>
+			<h2>Members of Committee:</h2><br>
 
 			Chair: <input type="text" ng-model="form.chair.name">
 			Department of Member: <input type="text" ng-model="form.chair.dep"><br>
@@ -41,7 +41,10 @@
 			Department of Member: <input type="text" ng-model="form.memb3.dep"><br>
 
 			External: <input type="text" ng-model="form.extMemb.name">
-			Department of Member: <input type="text" ng-model="form.memb4.dep"><br>
+			Department of Member: <input type="text" ng-model="form.memb4.dep"><br><br>
+
+			<input type="button" name="form-submit-btn" class="btn btn-success" ng-click="submitForm()" value="Submit">
+			<button type="reset" name="form-reset-btn" class="btn btn-danger">Reset</button>
 		</form>
 	</div>
 </section>

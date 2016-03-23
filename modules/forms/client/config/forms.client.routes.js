@@ -22,7 +22,7 @@
         .state('forms.phd-form', {
             url: '/PhD-Program-Supervisory-Commitee',
             templateUrl: 'modules/forms/client/views/PHD-form.client.view.html',
-            controller: 'FormController'
+            controller: 'PhdCommitteeFormController'
         })
         .state('forms.key_request-form', {
             url: '/Key-Approval-and-Building-Access-Request',
