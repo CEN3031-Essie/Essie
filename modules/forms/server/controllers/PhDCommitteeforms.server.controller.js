@@ -8,11 +8,10 @@ var path = require('path'),
   PhDCommitteeForm = mongoose.model('PhDCommitteeForm'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   nodemailer = require('nodemailer'),
-  smtpTransport = require('nodemailer-smtp-transport');
-
-var transporter = nodemailer.createTransport(
+  smtpTransport = require('nodemailer-smtp-transport'),
+  transporter = nodemailer.createTransport(
     smtpTransport('smtps://essieforms%40gmail.com:formspassword@smtp.gmail.com')
-);
+  );
 
 /**
  * Create an form

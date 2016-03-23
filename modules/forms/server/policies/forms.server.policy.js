@@ -15,32 +15,33 @@ exports.invokeRolesPolicies = function () {
   acl.allow([{
     roles: ['admin'],
     allows: [{
-      resources: '/api/gforms',
+      resources: '/api/forms',
       permissions: '*'
     }, {
-      resources: '/api/gforms/:gformId',
+      resources: '/api/forms/:formId',
       permissions: '*'
     }]
   }, {
     roles: ['user'],
     allows: [{
-      resources: '/api/gforms',
+      resources: '/api/forms',
       permissions: ['get', 'post']
     }, {
-      resources: '/api/gforms/:gformId',
+      resources: '/api/forms/:formId',
       permissions: ['get']
     }]
   }, {
     roles: ['guest'],
     allows: [{
-      resources: '/api/gforms',
+      resources: '/api/forms',
       permissions: ['get']
     }, {
-      resources: '/api/gforms/:gformId',
+      resources: '/api/forms/:formId',
       permissions: ['get']
     }]
   }]);
 };
+
 
 /**
  * Check If GForms Policy Allows
@@ -48,8 +49,8 @@ exports.invokeRolesPolicies = function () {
 exports.isAllowed = function (req, res, next) {
   var roles = (req.user) ? req.user.roles : ['guest'];
 
-  // If an gform is being processed and the current user created it then allow any manipulation
-  if (req.gform && req.user && req.gform.user && req.gform.user.id === req.user.id) {
+  // If an form is being processed and the current user created it then allow any manipulation
+  if (req.form && req.user && req.form.user && req.form.user.id === req.user.id) {
     return next();
   }
 
