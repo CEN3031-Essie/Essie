@@ -37,5 +37,9 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
     $scope.$on('$stateChangeSuccess', function () {
       $scope.isCollapsed = false;
     });
+
+    $scope.logOut = function () {
+      $scope.authentication.user = null;
+    }
   }
 ]);
