@@ -19,6 +19,10 @@
             templateUrl: 'modules/forms/client/views/list-forms.client.view.html',
             controller: 'FormsListController',
         })
+        .state('forms.success', {
+            url: '/success',
+            templateUrl: 'modules/forms/client/views/form-submission-success.client.view.html'
+        })
         .state('forms.phd-form', {
             url: '/PhD-Program-Supervisory-Commitee',
             templateUrl: 'modules/forms/client/views/PHD-form.client.view.html',

@@ -12,6 +12,7 @@
             // function to submit form information
             console.log('Form submitted');
             console.log($scope.form);
+            $state.go('forms.success');
         };
     }
 })();
