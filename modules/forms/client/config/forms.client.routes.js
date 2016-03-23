@@ -21,11 +21,13 @@
         })
         .state('forms.phd-form', {
             url: '/PhD-Program-Supervisory-Commitee',
-            templateUrl: 'modules/forms/client/views/PHD-form.client.view.html'
+            templateUrl: 'modules/forms/client/views/PHD-form.client.view.html',
+            controller: 'FormController'
         })
         .state('forms.key_request-form', {
             url: '/Key-Approval-and-Building-Access-Request',
-            templateUrl: 'modules/forms/client/views/Key_Request-form.client.view.html'
+            templateUrl: 'modules/forms/client/views/Key_Request-form.client.view.html',
+            controller: 'FormController'
         });
     }
 })();

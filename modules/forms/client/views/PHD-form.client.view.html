@@ -3,23 +3,29 @@
 		<h1>Ph.D. Program Supervisory Committee</h1>
 	</div>
 	<div>
-		<form>
-			Term: <input type="text" name="term"></input><br>
-			
+		<form class="essie-form" ng-submit="submitForm()">
+			<div class="form-group">
+				Term: <input type="text" class="form-control" ng-model="form.term" placeholder="Spring/Summer/Fall">
+			</div>
 			Student Name:<br>
-			
 			<div>
-			Last: <input type="text" name="lName"></input> 
-			First: <input type="text" name="fName"></input> 
-			MI: <input type="text" name="mName"></input><br>
+				<div class="form-group">
+					Last: <input type="text" class="form-control" ng-model="form.last_name">
+				</div>
+				<div class="form-group">
+					First: <input type="text" class="form-control" ng-model="form.first_name">
+				</div>
+				<div class="form-group">
+					MI: <input type="text" class="form-control" ng-model="form.m_Initial">
+				</div>
 			</div>
 
-			UF-ID #: <input type="text" name="ufid"></input>
-			E-mail address: <input type="text" name="email"></input><br><br>
+			UF-ID #: <input type="text" name="ufid">
+			E-mail address: <input type="text" name="email"><br><br>
 
 			Members of Committee: <br>
 
-			Chair: <input type="text" name="chair"></input>
+			Chair: <input type="text" name="chair">
 			Department of Member: <input type="text" name="chair_dep"></input><br>
 
 			Co-Chair: <input type="text" name="coChair"></input>
