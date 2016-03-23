@@ -40,6 +40,6 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
 
     $scope.logOut = function () {
       $scope.authentication.user = null;
-    }
+    };
   }
 ]);
