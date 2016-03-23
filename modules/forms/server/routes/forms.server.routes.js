@@ -15,7 +15,7 @@ module.exports = function (app) {
   // Single gform routes
   app.route('/api/forms/:formId').all(formsPolicy.isAllowed)
     .get(PhDCommitteeforms.read)
-    .put(PhDCommitteeforms.update)
+    //.put(PhDCommitteeforms.update)
     .delete(PhDCommitteeforms.delete);
 
   // Finish by binding the gform middleware
