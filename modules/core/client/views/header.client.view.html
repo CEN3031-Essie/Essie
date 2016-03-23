@@ -21,7 +21,9 @@
 
 
 </ul><ul class="col-md-6"><li><a href="/about/accessibility-recommendations/">Accessibility Recommendations</a></li><li><a href="/about/best-practices/">Best Practices</a></li><li><a href="http://www.identity.ufl.edu/policies-guidelines/web/">Graphical Standards</a></li><li><a href="http://www.it.ufl.edu/policies/web-related/corporate-support/">Recognizing Corporate Supporters on the Web</a></li></ul></div>
-</li><li><a href="/templates/" ng-if = "authentication.user" ui-sref = "gforms.list" class="main-menu-link"><span>Forms</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
+
+</li><li><a href="/templates/" ng-if = "authentication.user" ui-sref = "forms.list" class="main-menu-link"><span>Forms</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
+
 </li><li><a href="/templates/" ng-if = "!authentication.user" ui-sref = "authentication.signin" class="main-menu-link"><span>Forms</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
 <div class="dropdown"><ul class="col-md-6">
 <li><a href="/templates/uf-2011/">UF 2011</a></li>
@@ -81,7 +83,7 @@
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#close"></use>
               </svg>
           </span>
->>>>>>> 2015template
+
         </a>
       <form action="http://search.ufl.edu/search" method="get" class="search-wrap">
           <input type="hidden" name="source" value="web">
@@ -91,9 +93,11 @@
           <button type="submit" id="submit_desktop" name="submit" class="btn-search">
               <span class="icon-svg">
               <svg>
+
                   <!-- <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#search"></use> -->
-                  <img src="modules/core/client/img/brand/searchIcon.png" alt="logo-uf" style="width : -1px; height : -1px; margin-left: -15px; margin-top: -30px; width: 250%; height: auto;  "
-                  
+                  <img src="modules/core/client/img/brand/searchIcon.png" alt="logo-uf" style="width : -1px; height : -1px; margin-left: -15px; margin-top: -30px; width: 250%; height: auto;  " class="">
+
+
               </svg>
             </span>
           </button>

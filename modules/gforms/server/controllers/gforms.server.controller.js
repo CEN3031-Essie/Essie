@@ -6,7 +6,13 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   GForm = mongoose.model('GForm'),
-  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
+  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
+  nodemailer = require('nodemailer'),
+  smtpTransport = require('nodemailer-smtp-transport');
+
+var transporter = nodemailer.createTransport(
+    smtpTransport('smtps://essieforms%40gmail.com:formspassword@smtp.gmail.com')
+);
 
 /**
  * Create an gform
@@ -21,6 +27,13 @@ exports.create = function (req, res) {
         message: errorHandler.getErrorMessage(err)
       });
     } else {
+      transporter.sendMail({
+        from: 'EssieForms@email.com',
+        to: 'rgoldblum84@gmail.com',
+        subject: 'Succesful New Form',
+        text: 'Congrats ' + gform.user.firstName + '! You have succesfully submited ' + gform.title + '.'
+      });
+
       res.json(gform);
     }
   });

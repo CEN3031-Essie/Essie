@@ -19,6 +19,7 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline; }
 
+
 body {
   line-height: 1; }
 
@@ -965,6 +966,7 @@ img {
 
 .icon-circle {
   background: #fff;
+>>>>>>> 2015template
   border-radius: 50%;
   display: inline-block;
   padding: 15px; }

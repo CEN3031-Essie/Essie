@@ -2,7 +2,8 @@
   <div class="page-header">
     <h1 ng-bind="vm.gform.title"></h1>
   </div>
-  <div class="pull-right" ng-show="vm.authentication.user._id == vm.gform.user._id">
+  <div class="pull-right" ng-show="vm.isAdmin()">
+  <!-- <div class="pull-right" ng-show="vm.authentication.user._id == 'admin'">  -->
     <a class="btn btn-primary" ui-sref="gforms.edit({ gformId: vm.gform._id })">
       <i class="glyphicon glyphicon-edit"></i>
     </a>
