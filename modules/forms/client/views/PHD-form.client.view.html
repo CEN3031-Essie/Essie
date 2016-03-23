@@ -5,43 +5,43 @@
 	<div>
 		<form class="essie-form">
 			<div class="form-group">
-				Term: <input type="text" class="form-control" ng-model="form.term" placeholder="Spring/Summer/Fall, Year">
+				Term: <input type="text" class="form-control" ng-model="form.Term" placeholder="Spring/Summer/Fall, Year">
 			</div>
 			<h2>Student Information:</h2><br>
 			<div>
 				<div class="form-group">
-					Last: <input type="text" class="form-control" ng-model="form.last_name">
+					Last: <input type="text" class="form-control" ng-model="form.last_Name">
 				</div>
 				<div class="form-group">
-					First: <input type="text" class="form-control" ng-model="form.first_name">
+					First: <input type="text" class="form-control" ng-model="form.first_Name">
 				</div>
 				<div class="form-group">
 					MI: <input type="text" class="form-control" ng-model="form.m_Initial">
 				</div>
 			</div>
 
-			UF-ID #: <input type="text" ng-model="form.ufid">
+			UF-ID #: <input type="text" ng-model="form.uf_id">
 			E-mail address: <input type="text" ng-model="form.email"><br><br>
 
 			<h2>Members of Committee:</h2><br>
 
-			Chair: <input type="text" ng-model="form.chair.name">
-			Department of Member: <input type="text" ng-model="form.chair.dep"><br>
+			Chair: <input type="text" ng-model="form.Chair.name">
+			Department of Member: <input type="text" ng-model="form.Chair.department"><br>
 
-			Co-Chair: <input type="text" ng-model="form.coChair.name">
-			Department of Member: <input type="text" ng-model="form.coChair.dep"><br>
+			Co-Chair: <input type="text" ng-model="form.co_Chair.name">
+			Department of Member: <input type="text" ng-model="form.co_Chair.department"><br>
 
-			Member: <input type="text" ng-model="form.memb1.name">
-			Department of Member: <input type="text" ng-model="form.memb1.dep"><br>
+			Member: <input type="text" ng-model="form.member_1.name">
+			Department of Member: <input type="text" ng-model="form.memb1.department"><br>
 
-			Member: <input type="text" ng-model="form.memb2.name">
-			Department of Member: <input type="text" ng-model="form.memb2.dep"><br>
+			Member: <input type="text" ng-model="form.member_2.name">
+			Department of Member: <input type="text" ng-model="form.memb2.department"><br>
 
-			Member: <input type="text" ng-model="form.memb3.name">
-			Department of Member: <input type="text" ng-model="form.memb3.dep"><br>
+			Member: <input type="text" ng-model="form.member_3.name">
+			Department of Member: <input type="text" ng-model="form.memb3.department"><br>
 
-			External: <input type="text" ng-model="form.extMemb.name">
-			Department of Member: <input type="text" ng-model="form.memb4.dep"><br><br>
+			External: <input type="text" ng-model="form.external.name">
+			Department of Member: <input type="text" ng-model="form.external.department"><br><br>
 
 			<input type="button" name="form-submit-btn" class="btn btn-success" ng-click="submitForm()" value="Submit">
 			<button type="reset" name="form-reset-btn" class="btn btn-danger">Reset</button>
