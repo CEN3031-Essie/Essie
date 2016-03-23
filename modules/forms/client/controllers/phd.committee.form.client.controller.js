@@ -3,11 +3,11 @@
 
     angular
         .module('forms')
-        .controller('FormController', FormController);
+        .controller('PhdCommitteeFormController', PhdCommitteeFormController);
 
-    FormController.$inject = ['$scope', '$state', 'Authentication'];
+    PhdCommitteeFormController.$inject = ['$scope', '$state', 'Authentication'];
 
-    function FormController($scope, $state, Authentication) {
+    function PhdCommitteeFormController($scope, $state, Authentication) {
         function submitForm() {
             // function to submit form information
         }
