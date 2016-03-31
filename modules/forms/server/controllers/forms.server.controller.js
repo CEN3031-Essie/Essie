@@ -16,8 +16,15 @@ var path = require('path'),
 /**
  * Create an form
  */
-exports.create = function (req, res) {
-  var form = new PhDCommitteeForm(req.body);
+exports.create = function (req, res, formType) {
+
+  var form;
+
+  if(formType === 'phd-committee'){
+    form = new PhDCommitteeForm(req.body);
+  }
+  else;
+
   form.user = req.user;
 
   form.save(function (err) {
@@ -120,3 +127,4 @@ exports.formByID = function (req, res, next, id) {
     next();
   });
 };
+

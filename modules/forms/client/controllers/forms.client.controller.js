@@ -10,15 +10,16 @@
     function FormsController($scope, $state, Authentication) {
         $scope.submitForm = function () {
             // function to submit form information
-            if ($scope.form.type === 'Phd_Committee')
-            {
+            console.log($state.$current.name);
+            if ($scope.is('forms.phd-committee')) {
                 // do functions for phd committee form
+                $scope.form.formType = 'phd-committee';
             }
 
-            else if ($scope.form.type === 'phd_planOfStudy')
-            {
-                // do functions for phd plan of study form
-            }
+            // else if ($scope.is('forms.phd-plan-of-study')) {
+            //     // do functions for phd plan of study form
+            //     $scope.form.formType = 'phd-planOfStudy';
+            // }
 
             // ETC ETC ETC
 
