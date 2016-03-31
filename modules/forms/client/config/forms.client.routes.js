@@ -26,17 +26,17 @@
         .state('forms.phd-committee', {
             url: '/PhD-Program-Supervisory-Commitee',
             templateUrl: 'modules/forms/client/views/PHD-form.client.view.html',
-            controller: 'PhdCommitteeFormController'
+            controller: 'FormsController'
         })
         .state('forms.phd-plan-of-study', {
             url: '/PhD-Plan-of-Study',
             templateUrl: 'modules/forms/client/views/POS-form.client.view.html',
-            controller: 'PhdPlanOfStudyController'
+            controller: 'FormsController'
         })
         .state('forms.key_request-form', {
             url: '/Key-Approval-and-Building-Access-Request',
             templateUrl: 'modules/forms/client/views/Key_Request-form.client.view.html',
-            controller: 'FormController'
+            controller: 'FormsController'
         });
     }
 })();
