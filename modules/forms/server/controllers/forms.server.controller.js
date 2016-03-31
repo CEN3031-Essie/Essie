@@ -20,7 +20,7 @@ exports.create = function (req, res, formType) {
 
   var form;
 
-  if(formType === PhDCommitteeForm){
+  if(formType === 'phd-committee'){
     form = new PhDCommitteeForm(req.body);
   }
   else;
