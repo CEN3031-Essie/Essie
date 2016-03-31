@@ -17,9 +17,11 @@ var path = require('path'),
  * Create an form
  */
 exports.create = function (req, res, formType) {
-  
-  if(formType == PhDCommitteeForm){
-    var form = new PhDCommitteeForm(req.body);
+
+  var form;
+
+  if(formType === PhDCommitteeForm){
+    form = new PhDCommitteeForm(req.body);
   }
   else;
 
