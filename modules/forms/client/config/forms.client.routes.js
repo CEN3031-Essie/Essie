@@ -35,12 +35,13 @@
         })
         .state('forms.key-request', {
             url: '/Key-Approval-and-Building-Access-Request',
-            templateUrl: 'modules/forms/client/views/Key-Request.client.view.html',
+            templateUrl: 'modules/forms/client/views/key-request.client.view.html',
             controller: 'FormsController'
         })
-        .state('forms.', {
-            url: '/',
-            templateUrl
+        .state('forms.graduate-scholarship', {
+            url: '/Graduate-Scholarship-Application',
+            templateUrl: 'modules/forms/client/views/graduate-scholarship.client.view.html',
+            controller: 'FormsController'
         });
     }
 })();
