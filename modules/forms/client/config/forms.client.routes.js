@@ -37,10 +37,10 @@
             url: '/Key-Approval-and-Building-Access-Request',
             templateUrl: 'modules/forms/client/views/Key-Request.client.view.html',
             controller: 'FormsController'
-        })
-        .state('forms.', {
-            url: '/',
-            templateUrl
         });
-    }
+    //     .state('forms.', {
+    //         url: '/',
+    //         templateUrl
+    //     });
+     }
 })();

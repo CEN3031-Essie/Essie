@@ -16,14 +16,19 @@ var path = require('path'),
 /**
  * Create an form
  */
-exports.create = function (req, res, formType) {
-
+exports.create = function (req, res, next) {
+  console.log(req.body);
   var form;
 
-  if(formType === 'phd-committee'){
-    form = new PhDCommitteeForm(req.body);
+  if(req.body.form.formType === 'phd-committee'){
+    form = new PhDCommitteeForm(req.body.form);
   }
-  else;
+  else {
+    console.log('invalid form type');
+    return res.status(400).send({
+      message: "invalid form type"
+    });
+  }
 
   form.user = req.user;
 
@@ -33,12 +38,12 @@ exports.create = function (req, res, formType) {
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      transporter.sendMail({
-        from: 'EssieForms@email.com',
-        to: 'rgoldblum84@gmail.com',
-        subject: 'Succesful New Form',
-        text: 'Congrats ' + form.user.firstName + '! You have succesfully submited ' + form.title + '.'
-      });
+      // transporter.sendMail({
+      //   from: 'EssieForms@email.com',
+      //   to: 'rgoldblum84@gmail.com',
+      //   subject: 'Succesful New Form',
+      //   text: 'Congrats ' + form.user.firstName + '! You have succesfully submited ' + form.title + '.'
+      // });
 
       res.json(form);
     }

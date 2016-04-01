@@ -37,12 +37,12 @@ var PhDCommitteeSchema = new Schema({
     default: '',
     trim: true
   },
-  full_Name: {
-    type: String,
-    default: '',
-    trim: true,
-    required: true
-  },
+  // full_Name: {
+  //   type: String,
+  //   default: '',
+  //   trim: true,
+  //   required: true
+  // },
   uf_id: {
     type: String,
     default: '',
@@ -55,67 +55,81 @@ var PhDCommitteeSchema = new Schema({
     trim: true,
     required: true
   },
-  gatorlink: {
-    type: String,
-    default: '',
-    trim: true,
-  },
+  // gatorlink: {
+  //   type: String,
+  //   default: '',
+  //   trim: true,
+  // },
   Chair: {
-    type: String,
-    default: '',
-    trim: true,
-    required: true,
-    department: {
+    name: {
       type: String,
+      default: '',
+      trim: true,
+      required: true
+    },
+    department: {
+      type: String
     }
   },
   co_Chair: {
-    type: String,
-    default: '',
-    trim: true,
-    department: {
+    name: {
       type: String,
+      default: '',
+      trim: true,
+      required: true
+    },
+    department: {
+      type: String
     }
   },
   member_1: {
-    type: String,
-    default: '',
-    trim: true,
-    required: true,
-    department: {
+    name: {
       type: String,
+      default: '',
+      trim: true,
+      required: true
+    },
+    department: {
+      type: String
     }
   },
   member_2: {
-    type: String,
-    default: '',
-    trim: true,
-    required: true,
-    department: {
+    name: {
       type: String,
+      default: '',
+      trim: true,
+      required: true
+    },
+    department: {
+      type: String
     }
   },
   member_3: {
-    type: String,
-    default: '',
-    trim: true,
-    department: {
+    name: {
       type: String,
+      default: '',
+      trim: true,
+      required: true
+    },
+    department: {
+      type: String
     }
   },
   external: {
-    type: String,
-    default: '',
-    trim: true,
-    required: true,
-    department: {
+    name: {
       type: String,
+      default: '',
+      trim: true
+     // required: true,
+    },
+    department: {
+      type: String
     }
   },
   user: {
     type: Schema.ObjectId,
     ref: 'User'
-  }
+  },
 });
 
-mongoose.model('PhDCommitteeForm', PhDCommitteeSchema);
+mongoose.model('PhDCommitteeForm', PhDCommitteeSchema, 'forms');
