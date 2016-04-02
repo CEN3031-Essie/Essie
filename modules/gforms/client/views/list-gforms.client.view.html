@@ -1,0 +1,24 @@
+<section>
+  <div class="page-header">
+    <h1>Forms</h1>
+  </div>
+  <div ng-show="vm.isAdmin()" class="create-form-button">
+    <a class="btn btn-primary" ui-sref = "gforms.create">Create New Form</a>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="gform in vm.gforms" ui-sref="gforms.view({ gformId: gform._id })" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="gform.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="gform.user" ng-bind="gform.user.displayName"></span>
+        <span ng-if="!gform.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="gform.title"></h4>
+      <p class="list-group-item-text" ng-bind="gform.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.gforms.$resolved && !vm.gforms.length">
+    No gforms yet, why don't you <a ui-sref="gforms.create">create one</a>?
+  </div>
+</section> 
