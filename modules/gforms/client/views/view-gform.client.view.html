@@ -1,0 +1,24 @@
+<section>
+  <div class="page-header">
+    <h1 ng-bind="vm.gform.title"></h1>
+  </div>
+  <div class="pull-right" ng-show="vm.isAdmin()">
+  <!-- <div class="pull-right" ng-show="vm.authentication.user._id == 'admin'">  -->
+    <a class="btn btn-primary" ui-sref="gforms.edit({ gformId: vm.gform._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-danger" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.gform.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.gform.user" ng-bind="vm.gform.user.displayName"></span>
+      <span ng-if="!vm.gform.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.gform.content"></p>
+</section>
