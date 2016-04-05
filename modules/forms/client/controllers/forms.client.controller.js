@@ -5,19 +5,20 @@
         .module('forms')
         .controller('FormsController', FormsController);
 
-    FormsController.$inject = ['$scope', '$state', 'Authentication'];
+    FormsController.$inject = ['$scope', '$state', 'Authentication', 'FormsService', 'Form'];
 
-    function FormsController($scope, $state, Authentication) {
+    function FormsController($scope, $state, Authentication, FormsService, Form) {
         $scope.submitForm = function () {
             // function to submit form information
-            if ($scope.form.type === 'Phd_Committee')
-            {
+            $scope.form = new Form();
+            if ($state.is('forms.phd-committee')) {
                 // do functions for phd committee form
+                $scope.form.formType = 'phd-committee';
             }
 
-            else if ($scope.form.type === 'phd_planOfStudy')
-            {
+            else if ($state.is('forms.phd-plan-of-study')) {
                 // do functions for phd plan of study form
+                $scope.form.formType = 'phd-planOfStudy';
             }
 
             // ETC ETC ETC
@@ -25,7 +26,11 @@
             // For testing purposes
             console.log('Form submitted');
             console.log($scope.form);
-            $state.go('forms.success');
+
+            $scope.form.$save(function () {
+                console.log('saved');
+                $state.go('forms.success');
+            });
         };
     }
 })();
