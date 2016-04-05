@@ -4,6 +4,31 @@
 	</div>
 	<div>
 		<form>
+			<div>
+			
+				<div>
+					Course Number and Title: <input type="text" class="form-control" ng-model="form.course1">
+				</div>
+				<div>
+					Source:
+					<div>
+						<input type="radio" class="form-control" value="UF Grad Course as Undergrad" ng-model="form.source1">UF Grad Course as Undergrad&nbsp;
+						<input type="radio" class="form-control" value="UF-4/1" ng-model="form.source1">UF-4/1&nbsp;
+						<input type="radio" class="form-control" value="UF-Non-degree or Post-bac" ng-model="form.source1">UF-Non-degree or Post-bac&nbsp;
+						<input type="radio" class="form-control" value="Transfer" ng-model="form.source1">Transfer&nbsp;
+						<input type="radio" class="form-control" value="UF" ng-model="form.source1">UF&nbsp;
+					</div>
+				</div>
+				<div>
+					Number of Credits: <input type="text" class="form-control" ng-model="form.m_Initial">
+				</div>
+				<div>
+					Planned Term & Year: <input type="text" class="form-control" ng-model="form.m_Initial">
+				</div>
+			</div>
+
+			<input type="button" name="form-submit-btn" class="btn btn-success" ng-click="submitForm()" value="Submit">
+			<button type="reset" name="form-reset-btn" class="btn btn-danger">Reset</button>
 		</form>
 	</div>
 </section>
