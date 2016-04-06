@@ -48,7 +48,7 @@
 
 </ul><ul class="col-md-6"><li><a href="/about/accessibility-recommendations/">Accessibility Recommendations</a></li><li><a href="/about/best-practices/">Best Practices</a></li><li><a href="http://www.identity.ufl.edu/policies-guidelines/web/">Graphical Standards</a></li><li><a href="http://www.it.ufl.edu/policies/web-related/corporate-support/">Recognizing Corporate Supporters on the Web</a></li></ul></div>
 
-</li><li><a href="/templates/" ng-if = "authentication.user" ng-click = "logOut()" ui-sref = "authentication.signin" class="main-menu-link"><span>Log Out</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
+</li><li><a href ng-if = "authentication.user" ng-click = "logOut()" class="main-menu-link"><span>Log Out</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
 
 </li><li><a href="/templates/" ng-if = "!authentication.user" ui-sref = "authentication.signin" class="main-menu-link"><span>Login</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
     <div class="dropdown"><ul class="col-md-6">

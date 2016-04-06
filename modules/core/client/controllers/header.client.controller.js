@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus', '$http',
-  function ($scope, $state, Authentication, Menus, $http) {
+angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus', '$http', '$window',
+  function ($scope, $state, Authentication, Menus, $http, $window) {
     // Expose view variables
     $scope.$state = $state;
     $scope.authentication = Authentication;
@@ -39,7 +39,8 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
     });
 
     $scope.logOut = function () {
-      $scope.authentication.user = null;
+      //$scope.authentication.user = null;
+      $window.location.href ='/api/auth/signout';
     };
   }
 ]);
