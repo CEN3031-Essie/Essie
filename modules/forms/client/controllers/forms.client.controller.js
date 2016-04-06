@@ -13,7 +13,7 @@
         
         $scope.submitForm = function () {
             // function to submit form information
-            console.log($scope.form);
+            //console.log($scope.form);
             // $scope.form = new FormsService();
             if ($state.is('forms.phd-committee')) {
                 // do functions for phd committee form

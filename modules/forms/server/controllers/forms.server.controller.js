@@ -39,10 +39,10 @@ exports.create = function (req, res, next) {
       });
     } else {
       transporter.sendMail({
-        from: 'EssieForms@email.com',
-        to: 'rgoldblum84@gmail.com',
-        subject: 'Succesful New Form',
-        text: 'Congrats ' + form.user.firstName + '! You have succesfully submited ' + form.title + '.'
+        // from: 'EssieForms@email.com',
+        // to: 'rgoldblum84@gmail.com',
+        // subject: 'Succesful New Form',
+        // text: 'Congrats ' + form.user.firstName + '! You have succesfully submited ' + form.title + '.'
       });
 
       res.json(form);
