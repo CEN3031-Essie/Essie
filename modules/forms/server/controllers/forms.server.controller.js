@@ -19,9 +19,11 @@ var path = require('path'),
 exports.create = function (req, res, next) {
   console.log(req.body);
   var form;
+  var ft;
 
   if(req.body.form.formType === 'phd-committee'){
     form = new PhDCommitteeForm(req.body.form);
+    ft = 'Ph.D. Program Supervisory Committee'
   }
   else {
     console.log('invalid form type');
@@ -40,9 +42,9 @@ exports.create = function (req, res, next) {
     } else {
       transporter.sendMail({
         from: 'EssieForms@email.com',
-        to: 'rgoldblum84@gmail.com',
-        subject: 'Succesful New Form',
-        text: 'Congrats ' + form.user.firstName + '! You have succesfully submited ' + form.title + '.'
+        to: 'essiestudent1@gmail.com',
+        subject: 'Succesful Form Submission',
+        text: 'Congrats ' + req.body.form.first_Name + '! You have succesfully submitted the ' + ft + ' form.'
       });
 
       res.json(form);
