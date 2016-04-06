@@ -23,7 +23,7 @@ exports.create = function (req, res, next) {
 
   if(req.body.form.formType === 'phd-committee'){
     form = new PhDCommitteeForm(req.body.form);
-    ft = 'Ph.D. Program Supervisory Committee'
+    ft = 'Ph.D. Program Supervisory Committee';
   }
   else {
     console.log('invalid form type');
