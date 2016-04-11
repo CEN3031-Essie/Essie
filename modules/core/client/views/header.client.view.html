@@ -1,4 +1,10 @@
-<div class="container" ng-controller="HeaderController" id = "header">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js"></script>
+  <script type="text/javascript" src="/modules/core/client/controllers/headerScript.js"></script>
+  <script type="text/javascript" src="/modules/core/client/controllers/headerPlugin.js"></script>
+
+  <div class="container" ng-controller="HeaderController" id = "header">
 
   <a href="#main" id="skip-link" class="visuallyhidden focusable">Skip to main content</a>
 
@@ -10,24 +16,21 @@
         <a href="/"><span class="icon-svg logo-unit"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/webservicesitufledu/images/ufit_ws_logo2.svg#logo"></use></svg><span class="visuallyhidden">Web Services</span></span></a>
         <ul>
         <li><a href="http://www.essie.ufl.edu/news_and_events/" class="main-menu-link"><span>News & Events</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.essie.ufl.edu/news_and_events/" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
-<div class="dropdown"><ul class="col-md-6">
-<li><a href="/about/our-team/">Our Team</a></li>
-<li><a href="/about/operations/">Operations</a></li>
-<li><a href="/about/responsibilities/">Responsibilities</a></li>
-<li><a href="/about/policies/">Policies</a></li>
+        <div class="dropdown"><ul class="col-md-6">
+          <li><a href="/about/our-team/">Our Team</a></li>
+          <li><a href="/about/operations/">Operations</a></li>
+          <li><a href="/about/responsibilities/">Responsibilities</a></li>
+          <li><a href="/about/policies/">Policies</a></li>
 
 
+          </ul><ul class="col-md-6"><li><a href="/about/accessibility-recommendations/">Accessibility Recommendations</a></li><li><a href="/about/best-practices/">Best Practices</a></li><li><a href="http://www.identity.ufl.edu/policies-guidelines/web/">Graphical Standards</a></li><li><a href="http://www.it.ufl.edu/policies/web-related/corporate-support/">Recognizing Corporate Supporters on the Web</a></li></ul></div>
 
+        </li><li><a href="/templates/" ng-if = "authentication.user" ui-sref = "forms.list" class="main-menu-link"><span>Forms</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
 
-
-</ul><ul class="col-md-6"><li><a href="/about/accessibility-recommendations/">Accessibility Recommendations</a></li><li><a href="/about/best-practices/">Best Practices</a></li><li><a href="http://www.identity.ufl.edu/policies-guidelines/web/">Graphical Standards</a></li><li><a href="http://www.it.ufl.edu/policies/web-related/corporate-support/">Recognizing Corporate Supporters on the Web</a></li></ul></div>
-
-</li><li><a href="/templates/" ng-if = "authentication.user" ui-sref = "forms.list" class="main-menu-link"><span>Forms</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
-
-</li><li><a href="/templates/" ng-if = "!authentication.user" ui-sref = "authentication.signin" class="main-menu-link"><span>Forms</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
-<div class="dropdown"><ul class="col-md-6">
-<li><a href="/templates/uf-2011/">UF 2011</a></li>
-<li><a href="/templates/uf-2015/">UF 2015</a></li>
+        </li><li><a href="/templates/" ng-if = "!authentication.user" ui-sref = "authentication.signin" class="main-menu-link"><span>Forms</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
+          <div class="dropdown"><ul class="col-md-6">
+          <li><a href="/templates/uf-2011/">UF 2011</a></li>
+          <li><a href="/templates/uf-2015/">UF 2015</a></li>
 
 
 </ul><ul class="col-md-6"><li><a href="/templates/oneuf-transition/">ONE.UF Transition</a></li></ul></div>
@@ -94,8 +97,8 @@
               <span class="icon-svg">
               <svg>
 
-                  <!-- <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#search"></use> -->
-                  <img src="modules/core/client/img/brand/searchIcon.png" alt="logo-uf" style="width : -1px; height : -1px; margin-left: -15px; margin-top: -30px; width: 250%; height: auto;  " class="">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#search"></use>
+                  
 
 
               </svg>
@@ -133,8 +136,48 @@
       </span>
     </a>
   </div>
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js"></script>
+  <script>
+      var statsjson = '/stats/index.json';
+      var biosjson = '/biographies/index.json';
+  </script>
+  
+
+  <script>
+     $(document).ready(function() {
+
+  });
+  </script>
+  <script>
+$(document).ready(function() {
+  displayUFAlert();
+
+  $('a').click(function() {
+    var href = $(this).attr('href');
+    if (href.match(/^http/) && !href.match(document.domain)) {
+      ga('send', 'event', 'Outbound Links', 'Click', href);
+    }
+    if (href.match(/\.(doc|docx|pdf|ppt|pptx|xls|xlsx|zip)$/)) {
+      ga('send', 'event', 'Downloads', 'Click', href);
+    }
+  });
+  $('.aux-nav a').click(function() {
+    ga('send', 'event', 'Auxiliary Navigation', 'Click', $(this).attr('href'));
+  });
+  $('.main-menu-wrap a').click(function() {
+    ga('send', 'event', 'Primary Navigation', 'Click', $(this).attr('href'));
+  });
+  $('.featured-story a.read-more').click(function() {
+    ga('send', 'event', 'Featured Story', 'Click', $(this).attr('href'));
+  });
+  $('.big-stat-wrap h2 a').click(function() {
+    ga('send', 'event', 'Secondary Story', 'Click', $(this).attr('href'));
+  });
+  $('.footer-menu a').click(function() {
+    ga('send', 'event', 'Footer Menu', 'Click', $(this).attr('href'));
+  });
+  $('.home .featured-story.article-271180 .category-tag').text('Inauguration');
+  $('.home .big-stat-wrap.content-271968 .category-tag').text('Commencement');
+});
+</script>
 
 </div>
