@@ -9,7 +9,7 @@ var formsPolicy = require('../policies/forms.server.policy'),
 module.exports = function (app) {
   // GForms collection routes
   app.route('/api/forms').all(formsPolicy.isAllowed)
-    //.get(forms.list)
+    .get(forms.list)
     .post(forms.create);
 
   // Single gform routes

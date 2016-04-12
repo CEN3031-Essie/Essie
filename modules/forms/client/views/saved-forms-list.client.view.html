@@ -1,0 +1,21 @@
+<section>
+	<!--<h1>Saved Forms</h1>
+	<li ng-repeat="form in Forms">
+		{{form.last_Name}}, {{form.first_Name}}
+	</li>-->
+	<table >
+	  <tr>
+	    <td><h3>Saved Forms</h3></td>
+	    <td></td>
+	  </tr>
+	  <tr ng-repeat="form in Forms">
+	    <td>{{form.first_Name}}</td>
+	    <td>
+	      <a class="btn btn-primary" ui-sref="">View</a>
+	      <a class="btn btn-danger"  ng-click="">Delete</a>
+	    </td>
+	  </tr>
+	</table>
+
+
+</section>
