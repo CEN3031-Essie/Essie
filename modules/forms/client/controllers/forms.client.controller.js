@@ -5,16 +5,24 @@
         .module('forms')
         .controller('FormsController', FormsController);
 
-    FormsController.$inject = ['$scope', '$state', 'Authentication', 'FormsService'];
+    FormsController.$inject = ['$scope', '$state', 'Authentication', 'FormsService', '$http'];
 
-    function FormsController($scope, $state, Authentication, FormsService) {
+    function FormsController($scope, $state, Authentication, FormsService, $http) {
 
-        var NewForm = new FormsService();
-        
+        //  Make current user accessible in $scope.user
+        $http.get('/api/users/me').success(function (res) {
+            $scope.user = res;
+            console.log($scope.user);
+        }).error(function (err) {
+            console.log('Error');
+            $scope.error = err.message;
+            console.log($scope.error);
+        });
+
         $scope.submitForm = function () {
             // function to submit form information
-            //console.log($scope.form);
-            // $scope.form = new FormsService();
+            var NewForm = new FormsService();
+
             if ($state.is('forms.phd-committee')) {
                 // do functions for phd committee form
                 $scope.form.formType = 'phd-committee';
@@ -25,14 +33,7 @@
                 $scope.form.formType = 'phd-planOfStudy';
             }
 
-            // ETC ETC ETC
-
-            // For testing purposes
-            console.log('Form submitted');
-
-
             NewForm.form = $scope.form;
-
             NewForm.$save(function success(res) {
                 console.log('saved');
                 console.log(res);

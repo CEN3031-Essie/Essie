@@ -7,13 +7,14 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
     $scope.authentication = Authentication;
 
     // Redirect to user signin if not signed in
-    if (!$state.includes('home') && !$scope.authentication.user){
+    if (!$state.is('home') && !$scope.authentication.user){
       $state.go('authentication.signin');
     }
 
     // Makes current user object accessible
     $http.get('/api/users/me').success(function (res) {
         $scope.user = res;
+        // console.log($scope.user);
     }).error(function (err) {
         console.log('Error');
         $scope.error = err.message;
