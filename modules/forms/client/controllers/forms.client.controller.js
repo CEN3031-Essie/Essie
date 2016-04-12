@@ -9,6 +9,9 @@
 
     function FormsController($scope, $state, Authentication, FormsService) {
 
+        //fetchs saved forms from database
+        $scope.Forms = FormsService.query();
+
         var NewForm = new FormsService();
         
         $scope.submitForm = function () {
@@ -29,6 +32,8 @@
 
             // For testing purposes
             console.log('Form submitted');
+
+            console.log($scope.Forms)
 
 
             NewForm.form = $scope.form;
