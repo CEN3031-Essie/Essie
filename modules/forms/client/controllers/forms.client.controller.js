@@ -13,6 +13,17 @@
         $scope.Forms = FormsService.query();
 
         var NewForm = new FormsService();
+
+        $scope.authentication = Authentication;
+
+        if ($state.is('forms.saved-list') && !($scope.authentication.user.roles.indexOf('admin') > -1)) {
+            $state.go('forms.list')
+        };
+
+        //returns boolean of whether user is an admin or not
+        $scope.isAdmin = function () {
+            return $scope.authentication.user.roles.indexOf('admin') > -1;
+        };
         
         $scope.submitForm = function () {
             // function to submit form information
@@ -33,7 +44,7 @@
             // For testing purposes
             console.log('Form submitted');
 
-            console.log($scope.Forms)
+            console.log($scope.Forms);
 
 
             NewForm.form = $scope.form;
