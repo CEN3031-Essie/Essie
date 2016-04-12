@@ -12,23 +12,17 @@
         //fetchs saved forms from database
         $scope.Forms = FormsService.query();
 
-        var NewForm = new FormsService();
-
         $scope.authentication = Authentication;
 
-        if ($state.is('forms.saved-list') && !($scope.authentication.user.roles.indexOf('admin') > -1)) {
-            $state.go('forms.list')
-        };
+        if ($state.is('forms.saved-list') && !isAdmin()) {
+            $state.go('forms.list');
+        }
+// ($scope.authentication.user.roles.indexOf('admin') < 0)
 
-        //returns boolean of whether user is an admin or not
-        $scope.isAdmin = function () {
-            return $scope.authentication.user.roles.indexOf('admin') > -1;
-        };
-        
+
+        // function to submit form information
         $scope.submitForm = function () {
-            // function to submit form information
-            //console.log($scope.form);
-            // $scope.form = new FormsService();
+            var NewForm = new FormsService();
             if ($state.is('forms.phd-committee')) {
                 // do functions for phd committee form
                 $scope.form.formType = 'phd-committee';
@@ -39,16 +33,10 @@
                 $scope.form.formType = 'phd-planOfStudy';
             }
 
-            // ETC ETC ETC
-
-            // For testing purposes
-            console.log('Form submitted');
-
             console.log($scope.Forms);
 
 
             NewForm.form = $scope.form;
-
             NewForm.$save(function success(res) {
                 console.log('saved');
                 console.log(res);
@@ -58,5 +46,10 @@
                 console.log(err);
             });
         };
+
+        //returns boolean of whether user is an admin or not
+        function isAdmin() {
+            return $scope.authentication.user.roles.indexOf('admin') > -1;
+        }
     }
 })();
