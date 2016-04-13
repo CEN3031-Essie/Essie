@@ -26,6 +26,7 @@
 			<h2>Members of Committee:</h2><br>
  
 			Chair:	<select name="form.Chair.name" ng-model="form.Chair.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
+						<option value=""></option>
 	      			   <option ng-repeat="approver in Approvers" value="{{approver.name}}">{{approver.name}}</option>
 	     			</select> 	
 	     	<p></p>																				
@@ -35,6 +36,7 @@
 			<p></p>
 			
 			Co-Chair: <select name="form.co_Chair.name" ng-model="form.co_Chair.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
+						<option value=""></option>
 	      			   <option ng-repeat="approver in Approvers" value="{{approver.name}}">{{approver.name}}</option>
 	     			</select> 
 			<p></p>
@@ -44,6 +46,7 @@
 			<p></p>
 
 			Member: <select name="form.member_1.name" ng-model="form.member_1.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
+						<option value=""></option>			
 	      			   <option ng-repeat="approver in Approvers" value="{{approver.name}}">{{approver.name}}</option>
 	     			</select> 
 			<p></p>
@@ -53,6 +56,7 @@
 			<p></p>
 
 			Member: <select name="form.member_2.name" ng-model="form.member_2.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
+						<option value=""></option>
 	      			   <option ng-repeat="approver in Approvers" value="{{approver.name}}">{{approver.name}}</option>
 	     			</select> 
 			<p></p>
@@ -62,6 +66,7 @@
 			<p></p>
 
 			Member: <select name="form.member_3.name" ng-model="form.member_3.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
+						<option value=""></option>
 	      			   <option ng-repeat="approver in Approvers" value="{{approver.name}}">{{approver.name}}</option>
 	     			</select> 
 			<p></p>
@@ -71,6 +76,7 @@
 			<p></p>
 			
 			External: <select name="form.external.name" ng-model="form.external.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
+						<option value=""></option>
 	      			   <option ng-repeat="approver in Approvers" value="{{approver.name}}">{{approver.name}}</option>
 	     			</select> 
 			<p></p>
