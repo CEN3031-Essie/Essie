@@ -11,6 +11,7 @@
 
         //fetchs saved forms from database
         $scope.Forms = FormsService.query();
+        $scope.Approvers = FormsService.query();
 
         $scope.authentication = Authentication;
 
