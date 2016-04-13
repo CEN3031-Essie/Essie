@@ -7,7 +7,7 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
     $scope.authentication = Authentication;
 
     // Redirect to user signin if not signed in
-    if (!$state.includes('home') && !$scope.authentication.user){
+    if (!$state.is('home') && !$scope.authentication.user){
       $state.go('authentication.signin');
     }
 
@@ -15,7 +15,6 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
     $http.get('/api/users/me').success(function (res) {
       $scope.user = res;
     }).error(function (err) {
-      console.log('Error');
       $scope.error = err.message;
       console.log($scope.error);
     });

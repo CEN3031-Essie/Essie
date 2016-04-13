@@ -136,7 +136,7 @@ exports.formByID = function (req, res, next, id) {
     });
   }
 
-  PhDCommitteeForm.findById(id).populate('user', 'full_Name').exec(function (err, form) {
+  PhDCommitteeForm.findById(id).populate('user', 'displayName').exec(function (err, form) {
     if (err) {
       return next(err);
     } else if (!form) {
@@ -148,4 +148,3 @@ exports.formByID = function (req, res, next, id) {
     next();
   });
 };
-
