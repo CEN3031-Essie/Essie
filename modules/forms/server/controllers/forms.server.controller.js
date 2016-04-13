@@ -6,6 +6,7 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   PhDCommitteeForm = mongoose.model('PhDCommitteeForm'),
+  Approver = mongoose.model('Approver'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   nodemailer = require('nodemailer'),
   smtpTransport = require('nodemailer-smtp-transport'),
@@ -96,11 +97,24 @@ exports.delete = function (req, res) {
   });
 };
 
+//lists all the approvers in the db
+exports.listApprover = function (req, res) {
+  Approver.find().sort('name').exec(function (err, approvers) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.json(approvers);
+    }
+  });
+};
+
 /**
  * List of PhDCommitteeForms
  */
 exports.list = function (req, res) {
-  PhDCommitteeForm.find().sort('-created').populate('user', 'full_Name').exec(function (err, forms) {
+  PhDCommitteeForm.find().sort('-created').exec(function (err, forms) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)

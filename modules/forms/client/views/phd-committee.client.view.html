@@ -24,24 +24,66 @@
 			E-mail address: <input type="text" ng-model="form.email"><br><br>
 
 			<h2>Members of Committee:</h2><br>
-
-			Chair: <input type="text" ng-model="form.Chair.name">
+ 
+			Chair:	<select name="form.Chair.name" ng-model="form.Chair.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
+						<option value=""></option>
+	      			   <option ng-repeat="approver in Approvers" value="{{approver.name}}">{{approver.name}}</option>
+	     			</select> 	
+	     	<p></p>																				
+			
 			Department of Member: <input type="text" ng-model="form.Chair.department"><br>
-
-			Co-Chair: <input type="text" ng-model="form.co_Chair.name">
+			
+			<p></p>
+			
+			Co-Chair: <select name="form.co_Chair.name" ng-model="form.co_Chair.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
+						<option value=""></option>
+	      			   <option ng-repeat="approver in Approvers" value="{{approver.name}}">{{approver.name}}</option>
+	     			</select> 
+			<p></p>
+			
 			Department of Member: <input type="text" ng-model="form.co_Chair.department"><br>
+			
+			<p></p>
 
-			Member: <input type="text" ng-model="form.member_1.name">
+			Member: <select name="form.member_1.name" ng-model="form.member_1.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
+						<option value=""></option>			
+	      			   <option ng-repeat="approver in Approvers" value="{{approver.name}}">{{approver.name}}</option>
+	     			</select> 
+			<p></p>
+
 			Department of Member: <input type="text" ng-model="form.member_1.department"><br>
 
-			Member: <input type="text" ng-model="form.member_2.name">
+			<p></p>
+
+			Member: <select name="form.member_2.name" ng-model="form.member_2.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
+						<option value=""></option>
+	      			   <option ng-repeat="approver in Approvers" value="{{approver.name}}">{{approver.name}}</option>
+	     			</select> 
+			<p></p>
+
 			Department of Member: <input type="text" ng-model="form.member_2.department"><br>
+			
+			<p></p>
 
-			Member: <input type="text" ng-model="form.member_3.name">
+			Member: <select name="form.member_3.name" ng-model="form.member_3.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
+						<option value=""></option>
+	      			   <option ng-repeat="approver in Approvers" value="{{approver.name}}">{{approver.name}}</option>
+	     			</select> 
+			<p></p>
+			
 			Department of Member: <input type="text" ng-model="form.member_3.department"><br>
-
-			External: <input type="text" ng-model="form.external.name">
+			
+			<p></p>
+			
+			External: <select name="form.external.name" ng-model="form.external.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
+						<option value=""></option>
+	      			   <option ng-repeat="approver in Approvers" value="{{approver.name}}">{{approver.name}}</option>
+	     			</select> 
+			<p></p>
+			
 			Department of Member: <input type="text" ng-model="form.external.department"><br><br>
+			
+			<p></p>
 
 			<input type="button" id="submit" name="form-submit-btn" class="btn btn-success" ng-click="submitForm()" value="Submit">
 			<button type="reset" id="reset" name="form-reset-btn" class="btn btn-danger">Reset</button>

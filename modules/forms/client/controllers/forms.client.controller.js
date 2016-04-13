@@ -5,12 +5,13 @@
         .module('forms')
         .controller('FormsController', FormsController);
 
-    FormsController.$inject = ['$scope', '$state', 'Authentication', 'FormsService'];
+    FormsController.$inject = ['$scope', '$state', 'Authentication', 'FormsService', 'ApproversService'];
 
-    function FormsController($scope, $state, Authentication, FormsService) {
+    function FormsController($scope, $state, Authentication, FormsService, ApproversService) {
 
         //fetchs saved forms from database
         $scope.Forms = FormsService.query();
+        $scope.Approvers = ApproversService.query();
 
         $scope.currentForm;
 
