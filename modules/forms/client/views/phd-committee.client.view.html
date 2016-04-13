@@ -31,9 +31,17 @@
 	     			</select> 	
 	     	<p></p>																				
 			
-			Department of Member: <input type="text" ng-model="form.Chair.department"><br>
+			Department of Member: <select name="form.Chair.department" ng-model="form.Chair.department">
+										<option value=""></option>
+										<option value="Civil">Civil</option>
+										<option value="Coastal">Coastal</option>
+										<option value="Environmental">Environmental</option>
+										<option value="N/A">N/A</option>
+							</select>
+			<p>
+				<br></br>
+			</p>
 			
-			<p></p>
 			
 			Co-Chair: <select name="form.co_Chair.name" ng-model="form.co_Chair.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
 						<option value=""></option>
@@ -41,9 +49,16 @@
 	     			</select> 
 			<p></p>
 			
-			Department of Member: <input type="text" ng-model="form.co_Chair.department"><br>
-			
-			<p></p>
+			Department of Member: <select name="form.Chair.department" ng-model="form.co_Chair.department">
+										<option value=""></option>
+										<option value="Civil">Civil</option>
+										<option value="Coastal">Coastal</option>
+										<option value="Environmental">Environmental</option>
+										<option value="N/A">N/A</option>
+							</select>
+			<p>
+				<br></br>
+			</p>
 
 			Member: <select name="form.member_1.name" ng-model="form.member_1.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
 						<option value=""></option>			
@@ -51,9 +66,16 @@
 	     			</select> 
 			<p></p>
 
-			Department of Member: <input type="text" ng-model="form.member_1.department"><br>
-
-			<p></p>
+			Department of Member: <select name="form.Chair.department" ng-model="form.member_1.department">
+										<option value=""></option>
+										<option value="Civil">Civil</option>
+										<option value="Coastal">Coastal</option>
+										<option value="Environmental">Environmental</option>
+										<option value="N/A">N/A</option>
+							</select>
+			<p>
+				<br></br>
+			</p>
 
 			Member: <select name="form.member_2.name" ng-model="form.member_2.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
 						<option value=""></option>
@@ -61,9 +83,16 @@
 	     			</select> 
 			<p></p>
 
-			Department of Member: <input type="text" ng-model="form.member_2.department"><br>
-			
-			<p></p>
+			Department of Member: <select name="form.Chair.department" ng-model="form.member_2.department">
+										<option value=""></option>
+										<option value="Civil">Civil</option>
+										<option value="Coastal">Coastal</option>
+										<option value="Environmental">Environmental</option>
+										<option value="N/A">N/A</option>
+							</select>
+			<p>
+				<br></br>
+			</p>
 
 			Member: <select name="form.member_3.name" ng-model="form.member_3.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
 						<option value=""></option>
@@ -71,9 +100,16 @@
 	     			</select> 
 			<p></p>
 			
-			Department of Member: <input type="text" ng-model="form.member_3.department"><br>
-			
-			<p></p>
+			Department of Member: <select name="form.Chair.department" ng-model="form.member_3.department">
+										<option value=""></option>
+										<option value="Civil">Civil</option>
+										<option value="Coastal">Coastal</option>
+										<option value="Environmental">Environmental</option>
+										<option value="N/A">N/A</option>
+							</select>
+			<p>
+				<br></br>
+			</p>
 			
 			External: <select name="form.external.name" ng-model="form.external.name">	<!-- <input type="text" ng-model="form.Chair.name"> -->
 						<option value=""></option>
@@ -81,9 +117,16 @@
 	     			</select> 
 			<p></p>
 			
-			Department of Member: <input type="text" ng-model="form.external.department"><br><br>
-			
-			<p></p>
+			Department of Member: <select name="form.Chair.department" ng-model="form.external.department">
+										<option value=""></option>
+										<option value="Civil">Civil</option>
+										<option value="Coastal">Coastal</option>
+										<option value="Environmental">Environmental</option>
+										<option value="N/A">N/A</option>
+							</select>
+			<p>
+				<br></br>
+			</p>
 
 			<input type="button" id="submit" name="form-submit-btn" class="btn btn-success" ng-click="submitForm()" value="Submit">
 			<button type="reset" id="reset" name="form-reset-btn" class="btn btn-danger">Reset</button>
