@@ -29,7 +29,7 @@ exports.create = function (req, res, next) {
   else {
     console.log('invalid form type');
     return res.status(400).send({
-      message: "invalid form type"
+      message: 'invalid form type'
     });
   }
 

@@ -13,11 +13,11 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
 
     // Makes current user object accessible
     $http.get('/api/users/me').success(function (res) {
-        $scope.user = res;
+      $scope.user = res;
     }).error(function (err) {
-        console.log('Error');
-        $scope.error = err.message;
-        console.log($scope.error);
+      console.log('Error');
+      $scope.error = err.message;
+      console.log($scope.error);
     });
 
 

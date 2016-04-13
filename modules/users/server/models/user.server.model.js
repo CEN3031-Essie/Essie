@@ -29,18 +29,18 @@ var validateLocalStrategyEmail = function (email) {
  */
 var UserSchema = new Schema({
     // For UF identification
-    ufid: {
-        type: Number,
-        unique: true,
-        required: true
-    },
-    gatorlink: {
-        type: String,
-        unique: true,
-        lowercase: true,
-        trim: true,
-        required: true
-    },
+  ufid: {
+    type: Number,
+    unique: true,
+    required: true
+  },
+  gatorlink: {
+    type: String,
+    unique: true,
+    lowercase: true,
+    trim: true,
+    required: true
+  },
   firstName: {
     type: String,
     trim: true,
