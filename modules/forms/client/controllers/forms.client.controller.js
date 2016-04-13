@@ -13,9 +13,7 @@
     $scope.Forms = FormsService.query();
     $scope.Approvers = ApproversService.query();
 
-    $scope.currentForm;
-
-    $scope.id;
+    //$scope.currentForm = FormsService.get({ formId: $scope.id });
 
     $scope.authentication = Authentication;
 
@@ -69,6 +67,10 @@
           $state.reload('forms.saved-list');
         });
       }); 
+    };
+
+    $scope.showForm = function () {
+      console.log($scope.id);
     };
 
         //returns boolean of whether user is an admin or not
