@@ -6,6 +6,7 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   PhDCommitteeForm = mongoose.model('PhDCommitteeForm'),
+  Approver = mongoose.model('Approver'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   nodemailer = require('nodemailer'),
   smtpTransport = require('nodemailer-smtp-transport'),
@@ -19,14 +20,16 @@ var path = require('path'),
 exports.create = function (req, res, next) {
   console.log(req.body);
   var form;
+  var ft;
 
   if(req.body.form.formType === 'phd-committee'){
     form = new PhDCommitteeForm(req.body.form);
+    ft = 'Ph.D. Program Supervisory Committee';
   }
   else {
     console.log('invalid form type');
     return res.status(400).send({
-      message: "invalid form type"
+      message: 'invalid form type'
     });
   }
 
@@ -40,9 +43,9 @@ exports.create = function (req, res, next) {
     } else {
       transporter.sendMail({
         from: 'EssieForms@email.com',
-        to: 'rgoldblum84@gmail.com',
-        subject: 'Succesful New Form',
-        text: 'Congrats ' + form.user.firstName + '! You have succesfully submited ' + form.title + '.'
+        to: 'essiestudent1@gmail.com',
+        subject: 'Succesful Form Submission',
+        text: 'Congrats ' + req.body.form.first_Name + '! You have succesfully submitted the ' + ft + ' form.'
       });
 
       res.json(form);
@@ -94,11 +97,24 @@ exports.delete = function (req, res) {
   });
 };
 
+//lists all the approvers in the db
+exports.listApprover = function (req, res) {
+  Approver.find().sort('name').exec(function (err, approvers) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.json(approvers);
+    }
+  });
+};
+
 /**
  * List of PhDCommitteeForms
  */
 exports.list = function (req, res) {
-  PhDCommitteeForm.find().sort('-created').populate('user', 'full_Name').exec(function (err, forms) {
+  PhDCommitteeForm.find().sort('-created').exec(function (err, forms) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
@@ -120,7 +136,7 @@ exports.formByID = function (req, res, next, id) {
     });
   }
 
-  PhDCommitteeForm.findById(id).populate('user', 'full_Name').exec(function (err, form) {
+  PhDCommitteeForm.findById(id).populate('user', 'displayName').exec(function (err, form) {
     if (err) {
       return next(err);
     } else if (!form) {
@@ -132,4 +148,3 @@ exports.formByID = function (req, res, next, id) {
     next();
   });
 };
-

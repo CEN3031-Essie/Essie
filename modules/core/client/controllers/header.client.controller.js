@@ -1,23 +1,22 @@
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus', '$http',
-  function ($scope, $state, Authentication, Menus, $http) {
+angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus', '$http', '$window',
+  function ($scope, $state, Authentication, Menus, $http, $window) {
     // Expose view variables
     $scope.$state = $state;
     $scope.authentication = Authentication;
 
     // Redirect to user signin if not signed in
-    if (!$state.includes('home') && !$scope.authentication.user){
+    if (!$state.is('home') && !$scope.authentication.user){
       $state.go('authentication.signin');
     }
 
     // Makes current user object accessible
     $http.get('/api/users/me').success(function (res) {
-        $scope.user = res;
+      $scope.user = res;
     }).error(function (err) {
-        console.log('Error');
-        $scope.error = err.message;
-        console.log($scope.error);
+      $scope.error = err.message;
+      console.log($scope.error);
     });
 
 
@@ -39,7 +38,8 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
     });
 
     $scope.logOut = function () {
-      $scope.authentication.user = null;
+      //$scope.authentication.user = null;
+      $window.location.href ='/api/auth/signout';
     };
   }
 ]);

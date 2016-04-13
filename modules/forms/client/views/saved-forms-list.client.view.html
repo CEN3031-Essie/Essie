@@ -1,0 +1,28 @@
+<section>
+	<!--<h1>Saved Forms</h1>
+	<li ng-repeat="form in Forms">
+		{{form.last_Name}}, {{form.first_Name}}
+	</li>-->
+	<table style="width:100%">
+	  <tr>
+	    <th>Name</th>
+	    <th>Form Type</th>
+	    <th>Date Created</th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	  <tr ng-repeat="form in Forms">
+	    <td>{{form.first_Name}} {{form.last_Name}}</td>
+	    <td>{{form.formType}}</td>
+	    <td>{{form.created}}</td>
+	    <td>
+	      <a class="btn btn-primary" ng-click="id = form._id" ui-sref="forms.view-form">View</a>
+	    </td>
+	    <td>
+	      <a class="btn btn-danger"  ng-click="deleteForm(form._id)">Delete</a>
+	    </td>
+	  </tr>
+	</table>
+
+
+</section>
