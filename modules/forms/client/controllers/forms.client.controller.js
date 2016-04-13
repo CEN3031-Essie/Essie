@@ -12,6 +12,10 @@
         //fetchs saved forms from database
         $scope.Forms = FormsService.query();
 
+        $scope.currentForm;
+
+        $scope.id;
+
         $scope.authentication = Authentication;
 
         if ($state.is('forms.saved-list') && !isAdmin()) {
@@ -45,6 +49,25 @@
             function error(err){
                 console.log(err);
             });
+        };
+
+        $scope.viewForm = function (id) {
+        	$scope.id = id;
+        	$scope.currentForm = FormsService.get({formId: $scope.id}, function() {
+        		console.log($scope.currentForm);
+        		$state.go('forms.view-form');
+        	}); 
+        };
+
+        $scope.deleteForm = function (id) {
+        	$scope.id = id;
+        	$scope.currentForm = FormsService.get({formId: $scope.id}, function() {
+        		console.log($scope.currentForm);
+
+				$scope.currentForm.$delete(function() {
+					$state.reload('forms.saved-list');
+				});
+        	}); 
         };
 
         //returns boolean of whether user is an admin or not

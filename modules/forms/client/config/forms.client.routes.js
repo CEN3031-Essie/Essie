@@ -24,6 +24,11 @@
             templateUrl: 'modules/forms/client/views/saved-forms-list.client.view.html',
             controller: 'FormsController',
         })
+        .state('forms.view-form', {
+            url: '/forms/:formId',
+            templateUrl: 'modules/forms/client/views/view-form.client.view.html',
+            controller: 'FormsController',
+        })
         .state('forms.success', {
             url: '/success',
             templateUrl: 'modules/forms/client/views/form-success.client.view.html'

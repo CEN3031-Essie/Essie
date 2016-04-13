@@ -11,8 +11,8 @@
 	  <tr ng-repeat="form in Forms">
 	    <td>{{form.first_Name}}</td>
 	    <td>
-	      <a class="btn btn-primary" ui-sref="">View</a>
-	      <a class="btn btn-danger"  ng-click="">Delete</a>
+	      <a class="btn btn-primary" ng-click="viewForm(form._id)">View</a>
+	      <a class="btn btn-danger"  ng-click="deleteForm(form._id)">Delete</a>
 	    </td>
 	  </tr>
 	</table>
