@@ -31,7 +31,8 @@
     })
     .state('forms.success', {
       url: '/success',
-      templateUrl: 'modules/forms/client/views/form-success.client.view.html'
+      templateUrl: 'modules/forms/client/views/form-success.client.view.html',
+      controller: 'FormsController'
     })
     .state('forms.phd-committee', {
       url: '/PhD-Program-Supervisory-Commitee',

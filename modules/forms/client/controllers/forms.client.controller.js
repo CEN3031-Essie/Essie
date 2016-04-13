@@ -27,6 +27,14 @@
       $state.go('forms.list');
     }
 
+    //  Non-blocking function to get off of the success page
+    if ($state.is('forms.success')) {
+        setTimeout(function () {
+            console.log('waiting');
+            $state.go('home');
+        }, 1500);
+    }
+
 
     // function to submit form information
     $scope.submitForm = function () {
