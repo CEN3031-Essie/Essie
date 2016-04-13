@@ -8,28 +8,33 @@
     FormsController.$inject = ['$scope', '$state', 'Authentication', 'FormsService', '$http'];
 
     function FormsController($scope, $state, Authentication, FormsService, $http) {
-
-        //  Make current user accessible in $scope.user
-        $http.get('/api/users/me').success(function (res) {
-            $scope.user = res;
-            console.log($scope.user);
-        }).error(function (err) {
-            console.log('Error');
-            $scope.error = err.message;
-            console.log($scope.error);
-        });
-
-        //fetchs saved forms from database
-        $scope.Forms = FormsService.query();
-
         $scope.authentication = Authentication;
 
         if ($state.is('forms.saved-list') && !isAdmin()) {
             $state.go('forms.list');
         }
 
+        //  Make current user accessible in $scope.user
+        $http.get('/api/users/me').success(function (res) {
+            $scope.user = res;
+            // console.log($scope.user);
+        }).error(function (err) {
+            console.log('Error');
+            $scope.error = err.message;
+            console.log($scope.error);
+        });
+
+
+
+        //fetchs saved forms from database
+        $scope.Forms = FormsService.query();
+
         // function to submit form information
         $scope.submitForm = function () {
+            $scope.form.last_Name   = $scope.user.lastName;
+            $scope.form.first_Name  = $scope.user.firstName;
+            $scope.form.email       = $scope.user.email;
+            $scope.form.uf_id       = $scope.user.ufid;
             var NewForm = new FormsService();
             if ($state.is('forms.phd-committee')) {
                 // do functions for phd committee form

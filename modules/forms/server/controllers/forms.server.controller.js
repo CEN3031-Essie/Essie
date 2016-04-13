@@ -100,7 +100,7 @@ exports.delete = function (req, res) {
  * List of PhDCommitteeForms
  */
 exports.list = function (req, res) {
-  PhDCommitteeForm.find().sort('-created').populate('user', 'full_Name').exec(function (err, forms) {
+  PhDCommitteeForm.find().sort('-created').populate('user', 'displayName').exec(function (err, forms) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
@@ -122,7 +122,7 @@ exports.formByID = function (req, res, next, id) {
     });
   }
 
-  PhDCommitteeForm.findById(id).populate('user', 'full_Name').exec(function (err, form) {
+  PhDCommitteeForm.findById(id).populate('user', 'displayName').exec(function (err, form) {
     if (err) {
       return next(err);
     } else if (!form) {
@@ -134,4 +134,3 @@ exports.formByID = function (req, res, next, id) {
     next();
   });
 };
-
