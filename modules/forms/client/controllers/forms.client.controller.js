@@ -5,9 +5,9 @@
     .module('forms')
     .controller('FormsController', FormsController);
 
-  FormsController.$inject = ['$scope', '$state', 'Authentication', 'FormsService', 'ApproversService', '$http'];
+  FormsController.$inject = ['$scope', '$state', 'Authentication', 'FormsService', 'ApproversService', '$http', '$stateParams'];
 
-  function FormsController($scope, $state, Authentication, FormsService, ApproversService, $http) {
+  function FormsController($scope, $state, Authentication, FormsService, ApproversService, $http, $stateParams) {
     $scope.authentication = Authentication;
 
     // Makes current user object accessible
@@ -21,6 +21,10 @@
     //fetchs saved forms & approvers from database
     $scope.Forms = FormsService.query();
     $scope.Approvers = ApproversService.query();
+
+    $scope.viewingForm = FormsService.get({ formId: $stateParams.formId }, function() {
+    
+    });
 
     $scope.authentication = Authentication;
 

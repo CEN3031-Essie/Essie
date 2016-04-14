@@ -25,7 +25,7 @@
       controller: 'FormsController',
     })
     .state('forms.view-form', {
-      url: '/forms/:formId',
+      url: '/:formId/view',
       templateUrl: 'modules/forms/client/views/view-form.client.view.html',
       controller: 'FormsController',
     })

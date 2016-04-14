@@ -1,5 +1,55 @@
-<section ng-controller="FormController">
-	<p>{{currentForm.first_Name}}</p>
+<section>
 
-	<button ng-click="showForm()">show</button>
+	<div class="panel panel-primary">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Form Information</h3>
+	  </div>
+	  <div class="panel-body">
+	    Form Type: {{viewingForm.formType}}
+	  </div>
+	</div>
+
+	<div class="panel panel-primary">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Student Information</h3>
+	  </div>
+	  <div class="panel-body">
+	    Term: {{viewingForm.Term}}
+	  </div>
+	  <div class="panel-body">
+	    Name: {{viewingForm.last_Name}}, {{viewingForm.first_Name}} {{viewingForm.m_Initial}}
+	  </div>
+	  <div class="panel-body">
+	    UFID: {{viewingForm.uf_id}}
+	  </div>
+	  <div class="panel-body">
+	    Email Address: {{viewingForm.email}}
+	  </div>
+	</div>
+
+	<div class="panel panel-primary">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Committee Information</h3>
+	  </div>
+	  <div class="panel-body">
+	    Chair Name: {{viewingForm.Chair.name}}, Department: {{viewingForm.Chair.department}}
+	  </div>
+	  <div class="panel-body">
+	    Co-Chair Name: {{viewingForm.co_Chair.name}}, Department: {{viewingForm.co_Chair.department}}
+	  </div>
+	  <div class="panel-body">
+	    Member Name: {{viewingForm.member_1.name}}, Department: {{viewingForm.member_1.department}}
+	  </div>
+	  <div class="panel-body">
+	    Member Name: {{viewingForm.member_2.name}}, Department: {{viewingForm.member_2.department}}
+	  </div>
+	  <div class="panel-body">
+	    Member Name: {{viewingForm.member_3.name}}, Department: {{viewingForm.member_3.department}}
+	  </div>
+	  <div class="panel-body">
+	    External Member Name: {{viewingForm.external.name}}, Department: {{viewingForm.external.department}}
+	  </div>
+
+	</div>
+
 </section>

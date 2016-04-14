@@ -16,7 +16,7 @@
 	    <td>{{form.formType}}</td>
 	    <td>{{form.created}}</td>
 	    <td>
-	      <a class="btn btn-primary" ng-click="id = form._id" ui-sref="forms.view-form">View</a>
+	      <a class="btn btn-primary" ui-sref="forms.view-form({formId: form._id})">View</a>
 	    </td>
 	    <td>
 	      <a class="btn btn-danger"  ng-click="deleteForm(form._id)">Delete</a>
