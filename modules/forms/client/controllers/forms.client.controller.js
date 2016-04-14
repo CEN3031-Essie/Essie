@@ -22,6 +22,7 @@
     $scope.Forms = FormsService.query();
     $scope.Approvers = ApproversService.query();
 
+    //using $stateParams to get formId from url and then send a get request to database for form with that id
     $scope.viewingForm = FormsService.get({ formId: $stateParams.formId }, function() {
     
     });
