@@ -1,0 +1,12 @@
+.panel-body h3{
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline;
+    padding-right: 2mm;
+}
+
+h3,p{
+	margin: 0;
+}
+

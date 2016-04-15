@@ -1,3 +1,7 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="view-form.client.view.css">
+</head>
+
 <section>
 
 	<div class="panel panel-primary">
@@ -5,7 +9,7 @@
 	    <h3 class="panel-title">Form Information</h3>
 	  </div>
 	  <div class="panel-body">
-	    Form Type: {{viewingForm.formType}}
+	    <h3> Form Type: </h3> {{viewingForm.formType}}
 	  </div>
 	</div>
 
@@ -14,16 +18,16 @@
 	    <h3 class="panel-title">Student Information</h3>
 	  </div>
 	  <div class="panel-body">
-	    Term: {{viewingForm.Term}}
+	    <h3> Term: </h3> {{viewingForm.Term}}
 	  </div>
 	  <div class="panel-body">
-	    Name: {{viewingForm.last_Name}}, {{viewingForm.first_Name}} {{viewingForm.m_Initial}}
+	    <h3> Name: </h3>  {{viewingForm.last_Name}}, {{viewingForm.first_Name}} {{viewingForm.m_Initial}}
 	  </div>
 	  <div class="panel-body">
-	    UFID: {{viewingForm.uf_id}}
+	    <h3> UFID: </h3> {{viewingForm.uf_id}}
 	  </div>
 	  <div class="panel-body">
-	    Email Address: {{viewingForm.email}}
+	    <h3> Email Address: </h3> {{viewingForm.email}}
 	  </div>
 	</div>
 
@@ -32,22 +36,39 @@
 	    <h3 class="panel-title">Committee Information</h3>
 	  </div>
 	  <div class="panel-body">
-	    Chair Name: {{viewingForm.Chair.name}}, Department: {{viewingForm.Chair.department}}
+	    <h3> Chair Name: </h3> {{viewingForm.Chair.name}}
+	     <p></p> 
+	    <h3> Department: </h3> {{viewingForm.Chair.department}}
 	  </div>
+
 	  <div class="panel-body">
-	    Co-Chair Name: {{viewingForm.co_Chair.name}}, Department: {{viewingForm.co_Chair.department}}
+	    <h3> Co-Chair Name: </h3> {{viewingForm.co_Chair.name}} 
+	     <p></p>
+	    <h3 class="Department"> Department: </h3> {{viewingForm.co_Chair.department}}
 	  </div>
+
 	  <div class="panel-body">
-	    Member Name: {{viewingForm.member_1.name}}, Department: {{viewingForm.member_1.department}}
+	    <h3> Member Name: </h3> {{viewingForm.member_1.name}}
+	     <p></p>
+	    <h3> Department: </h3> {{viewingForm.member_1.department}}
 	  </div>
+
 	  <div class="panel-body">
-	    Member Name: {{viewingForm.member_2.name}}, Department: {{viewingForm.member_2.department}}
+	    <h3> Member Name: </h3> {{viewingForm.member_2.name}} 
+	     <p></p>
+	    <h3> Department: </h3> {{viewingForm.member_2.department}}
 	  </div>
+
 	  <div class="panel-body">
-	    Member Name: {{viewingForm.member_3.name}}, Department: {{viewingForm.member_3.department}}
+	    <h3> Member Name: </h3> {{viewingForm.member_3.name}} 
+	     <p></p>
+	    <h3> Department: </h3> {{viewingForm.member_3.department}}
 	  </div>
+
 	  <div class="panel-body">
-	    External Member Name: {{viewingForm.external.name}}, Department: {{viewingForm.external.department}}
+	    <h3> External Member Name: </h3> {{viewingForm.external.name}} 
+	     <p></p>
+	    <h3> Department: </h3> {{viewingForm.external.department}}
 	  </div>
 
 	</div>
