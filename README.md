@@ -48,6 +48,23 @@ $ npm install -g grunt-cli
 ```bash
 $ npm install gulp -g
 ```
+## Setting up your mongodb
+If you haven't already signed up for a mongolab account, do so at www.mlab.com.
+Once you do that, hit create new to create a new database.
+you will most probably create an AWS single-node sandbox.
+Give the database a name and create it.
+Once it is created you should be able to see it under MongoDB Deployments on the homepage.
+Navigate to that database and look for the MongoDB URI.
+This URI is what you will use to connect your mean app to the mongoDB.
+Copy that line and replace <dbuser> and <dbpassword> with your username and password (replace the <>'s too).
+Within your ESSIE file folder, go to the folder path: config/env/development.js
+On line 7 replace the comment "uri goes here" with the uri of your db contained in a string. You should be ready to go.
+
+NOTE: This will not be the way to properly establish your mongo connection for final production. When doing it this way
+your mongo uri is openly shown in your github. There are two solutions to this. One is to add your development.js
+file to your .gitignore file so it will not be pushed to your gitHub. The other is to figure out the implementation of 
+environmental variables which is contained locally within your computer. Consult with the TA's about the best approach.
+The method provided here is a simple means of getting started quicker.
 
 ## Downloading MEAN.JS
 There are several ways you can get the MEAN.JS boilerplate:
@@ -94,6 +111,13 @@ After the install process is over, you'll be able to run your application using 
 
 ```
 $ grunt
+```
+
+*NOTE: If there are any stylistic errors contained with your code (eslint (line indentation) errors, css errors, etc.)
+	running grunt will not work. You may however bypass it temporarily with:
+	
+```
+$ grunt --force
 ```
 
 Your application should run on port 3000 with the *development* environment configuration, so in your browser just go to [http://localhost:3000](http://localhost:3000)
