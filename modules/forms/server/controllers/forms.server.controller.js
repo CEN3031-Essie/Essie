@@ -114,6 +114,9 @@ exports.listApprover = function (req, res) {
  * List of PhDCommitteeForms
  */
 exports.list = function (req, res) {
+	/*TO-DO: currently this will only find PHDforms. Some form of conditional,
+	(if/else) should be implemented to determine which type of form it is and
+	list that form.*/
   PhDCommitteeForm.find().sort('-created').exec(function (err, forms) {
     if (err) {
       return res.status(400).send({

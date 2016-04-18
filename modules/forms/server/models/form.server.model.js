@@ -136,4 +136,7 @@ var PhDCommitteeSchema = new Schema({
   },
 });
 
+/*when exporting this model it will go by the name of the first argument.
+the third paramater is used to redirect all models of schemas to a specific 
+collection within mongolab, in this case, forms*/
 mongoose.model('PhDCommitteeForm', PhDCommitteeSchema, 'forms');

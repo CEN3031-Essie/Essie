@@ -19,7 +19,7 @@
     });
 
     //fetchs saved forms & approvers from database
-    $scope.Forms = FormsService.query();
+    $scope.Forms = FormsService.query();						//query is from Angular ngResource
     $scope.Approvers = ApproversService.query();
 
     //using $stateParams to get formId from url and then send a get request to database for form with that id

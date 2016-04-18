@@ -5,7 +5,7 @@
     display: inline;
     padding-right: 2mm;
 }
-
+/*this will produce a line break between h3 headers and p elements.*/
 h3,p{
 	margin: 0;
 }
