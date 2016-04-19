@@ -1,12 +1,6 @@
 ESSIE README
 
-Link to deployed page:
--Deployement will be handled by the client after the project is handed off so no current deployed page exists
 
-Borrowed Code:
--Bootstrap
--UF 2015 Template https://webservices.it.ufl.edu/templates/uf-2015/
- This includes both the html used for the nav bars as well as the javascript used for site functionallity which was never succesfully integrated
 
 [![MEAN.JS Logo](http://meanjs.org/img/logo-small.png)](http://meanjs.org/)
 
@@ -272,6 +266,15 @@ $
 ```bash
 $ docker run -p 3000:3000 -p 35729:35729 -v /Users/mdl/workspace/mean-stack/mean/public:/home/mean/public -v /Users/mdl/workspace/mean-stack/mean/app:/home/mean/app --link db:db_1 mean
 ```
+
+Link to deployed page:
+-Deployement will be handled by the client after the project is handed off so no current deployed page exists
+
+Borrowed Code:
+-Bootstrap
+-UF 2015 Template https://webservices.it.ufl.edu/templates/uf-2015/
+ This includes both the html used for the nav bars as well as the javascript used for site functionallity which was never succesfully integrated
+
 
 ## Getting Started With MEAN.JS
 You have your application running, but there is a lot of stuff to understand. We recommend you go over the [Official Documentation](http://meanjs.org/docs.html).
