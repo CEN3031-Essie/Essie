@@ -6,12 +6,13 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
     $scope.$state = $state;
     $scope.authentication = Authentication;
 
-    // Redirect to user signin if not signed in
+    // Redirect to signin if guest user tries to access forbidden data
     if (!$state.is('home') && !$scope.authentication.user){
       $state.go('authentication.signin');
     }
 
     // Makes current user object accessible
+    // Authentication.user does not reveal all relevant data
     $http.get('/api/users/me').success(function (res) {
       $scope.user = res;
     }).error(function (err) {
@@ -37,8 +38,8 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
       $scope.isCollapsed = false;
     });
 
+    // log out current user
     $scope.logOut = function () {
-      //$scope.authentication.user = null;
       $window.location.href ='/api/auth/signout';
     };
   }

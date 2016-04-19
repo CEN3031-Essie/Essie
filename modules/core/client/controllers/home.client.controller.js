@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('HomeController', ['$scope', 'Authentication', '$state',
-  function ($scope, Authentication, $state) {
+angular.module('core').controller('HomeController', ['$scope', 'Authentication', '$state', '$window',
+  function ($scope, Authentication, $state, $window) {
     // This provides Authentication context.
     $scope.authentication = Authentication;
 
@@ -16,8 +16,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
     };
 
     $scope.logOut = function () {
-      $scope.authentication.user = null;
-      $state.go('authentication.signin');
+      $window.location.href ='/api/auth/signout';
     };
   }
 ]);

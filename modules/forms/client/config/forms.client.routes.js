@@ -7,9 +7,10 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+  // establish routes pertaining forms module
   function routeConfig($stateProvider) {
     $stateProvider
-    .state('forms', {
+    .state('forms', {   // abstract parent view for the module
       abstract: true,
       url: '/forms',
       template: '<ui-view/>'

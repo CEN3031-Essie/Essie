@@ -9,7 +9,7 @@ var acl = require('acl');
 acl = new acl(new acl.memoryBackend());
 
 /**
- * Invoke GForms Permissions
+ * Invoke Forms Permissions
  */
 exports.invokeRolesPolicies = function () {
   acl.allow([{
@@ -44,7 +44,7 @@ exports.invokeRolesPolicies = function () {
 
 
 /**
- * Check If GForms Policy Allows
+ * Check If Forms Policy Allows
  */
 exports.isAllowed = function (req, res, next) {
   var roles = (req.user) ? req.user.roles : ['guest'];

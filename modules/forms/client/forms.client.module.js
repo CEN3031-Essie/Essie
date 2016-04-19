@@ -1,3 +1,4 @@
+// module declaration and registration
 (function (app) {
   'use strict';
 

@@ -35,6 +35,7 @@
   max-height: 150px;
 }
 
+/* TODO: fix gatorlink login to better look like UF Authentication */
 .gatorlink-btn {
     color: black;
     border-color: black;

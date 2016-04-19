@@ -22,6 +22,9 @@ exports.create = function (req, res, next) {
   var form;
   var ft;
 
+  // selects the type of object to create based on the type of form
+  // each object has a different schema to follow based on the forms' fields
+  // TODO: combine all form types into a general object that can handle all types of forms dynamically
   if(req.body.form.formType === 'phd-committee'){
     form = new PhDCommitteeForm(req.body.form);
     ft = 'Ph.D. Program Supervisory Committee';
@@ -60,6 +63,7 @@ exports.read = function (req, res) {
   res.json(req.form);
 };
 
+// TODO: implement approve or deny implementationa and update the status of the form
 /**
  * Update an form
  */
