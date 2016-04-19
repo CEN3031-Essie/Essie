@@ -1,3 +1,13 @@
+ESSIE README
+
+Link to deployed page:
+-Deployement will be handled by the client after the project is handed off so no current deployed page exists
+
+Borrowed Code:
+-Bootstrap
+-UF 2015 Template https://webservices.it.ufl.edu/templates/uf-2015/
+ This includes both the html used for the nav bars as well as the javascript used for site functionallity which was never succesfully integrated
+
 [![MEAN.JS Logo](http://meanjs.org/img/logo-small.png)](http://meanjs.org/)
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/meanjs/mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
