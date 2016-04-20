@@ -75,6 +75,7 @@ The method provided here is a simple means of getting started quicker.
 ****************************************************************************************************************************
 ## Post Mean-Install Guide
 If you haven't already gone through the Mean-Install Guide, please do that first.
+
 1)	Go into your terminal and do:
 ```
 $ git clone https://github.com/CEN3031-Essie/Essie.git
