@@ -53,9 +53,8 @@ Make sure you have installed all of the following prerequisites on your developm
 	above. Follow these instructions to add a repository with the updated version of node
 	
 		```
-		 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash
-
-		 sudo apt-get install -y nodejs build-essential
+		 $ curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash
+		 $ sudo apt-get install -y nodejs build-essential
 		```
 	Linux users: npm might not be bundled with nodejs (check with npm --version). If so, use your
 	favorite package manager to install npm.
