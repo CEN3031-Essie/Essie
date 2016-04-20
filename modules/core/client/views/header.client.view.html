@@ -1,3 +1,4 @@
+<!-- This header file contains the html component of the UF 2015 template and can be found here: https://webservices.it.ufl.edu/templates/uf-2015/ -->
 <div class="container" ng-controller="HeaderController" id = "header">
 
   <a href="#main" id="skip-link" class="visuallyhidden focusable">Skip to main content</a>
@@ -23,6 +24,7 @@
 
     </ul><ul class="col-md-6"><li><a href="/about/accessibility-recommendations/">Accessibility Recommendations</a></li><li><a href="/about/best-practices/">Best Practices</a></li><li><a href="http://www.identity.ufl.edu/policies-guidelines/web/">Graphical Standards</a></li><li><a href="http://www.it.ufl.edu/policies/web-related/corporate-support/">Recognizing Corporate Supporters on the Web</a></li></ul></div>
 
+    <!-- Links forms button to forms page if user is signed in, links to sign in if not signed in -->
     </li><li><a href="/templates/" ng-if = "authentication.user" ui-sref = "forms.list" class="main-menu-link"><span>Forms</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
 
     </li><li><a href="/templates/" ng-if = "!authentication.user" ui-sref = "authentication.signin" class="main-menu-link"><span>Forms</span><span class="icon-svg icon-caret"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/media/templates/uf2015/img/spritemap.svg#caret"></use></svg></span></a>
@@ -95,6 +97,7 @@
           </span>
 
         </a>
+        <!-- This is the search bar in the upper right corner, and is not currently fully functional -->
       <form action="http://search.ufl.edu/search" method="get" class="search-wrap">
           <input type="hidden" name="source" value="web">
           <label for="query_desktop" class="visuallyhidden">Search UF</label>
