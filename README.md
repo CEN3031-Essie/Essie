@@ -22,27 +22,43 @@ Before you begin we recommend you read about the basic building blocks that asse
 ## Mean-Install-Guide
 Make sure you have installed all of the following prerequisites on your development machine:
 * Setup Git
+
 	1) Download the Git installer here (http://www.git‐scm.com/downloads) and choose the default values.
+	
 	2) Open up a shell (Windows users, open up the newly installed Git Bash ), and set your Name and Email
+	
 		a)git config ‐‐global user.name “ YOUR NAME ”
+		
 		b)git config ‐‐global user.email “ YOUR_EMAIL
+		
 * Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager. If you encounter any problems, you can also use this [GitHub Gist](https://gist.github.com/isaacs/579814) to install Node.js.
   * Node v5 IS NOT SUPPORTED AT THIS TIME! 
+  
   a) Mac OSX / Linux users: Follow these steps
+  
 	i) Make a new global npm folder in your home (Or somewhere else that is owned by your user)
+	
 	ii) mkdir ~/.npm_global
+	
 	iii) Set the npm global prefix to that folder
+	
 	iv) npm config set prefix ‘ ~/.npm_global ‘
+	
 	v) Add the new npm global folder to the PATH by adding the following line into your
 	~/.bash_profile or ~/.profile file (If it doesn’t exist, create it)
+	
 	vi) export PATH=~/.npm_global/bin:$PATH
+	
 	vii) Ubuntu/Debian users: Make sure that the version of nodejs that you are installing is v5.3.0 or
 	above. Follow these instructions to add a repository with the updated version of node
+	
 		(1) curl ‐sL https://deb.nodesource.com/setup_5.x | sudo ‐E bash
 ‐
 		(2) sudo apt‐get install ‐y nodejs build‐essential
+		
 	viii) Linux users: npm might not be bundled with nodejs (check with npm ‐‐version). If so, use your
 	favorite package manager to install npm.
+	
 * MongoDB - [Download & Install MongoDB](http://www.mongodb.org/downloads), and make sure it's running on the default port (27017).
 * Ruby - [Download & Install Ruby](https://www.ruby-lang.org/en/documentation/installation/)
 	a) Windows users, Make sure to install Ruby into your PATH. (An option in the installer)
