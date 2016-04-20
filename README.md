@@ -48,7 +48,8 @@ $ npm install -g grunt-cli
 ```bash
 $ npm install gulp -g
 ```
-## Setting up your mongodb
+****************************************************************************************************************************
+## Setting up your mongodb 
 If you haven't already signed up for a mongolab account, do so at www.mlab.com.
 Once you do that, hit create new to create a new database.
 you will most probably create an AWS single-node sandbox.
@@ -61,11 +62,56 @@ Within your ESSIE file folder, go to the folder path: config/env/development.js
 On line 7 replace the comment "uri goes here" with the uri of your db contained in a string. You should be ready to go.
 
 NOTE: This will not be the way to properly establish your mongo connection for final production. When doing it this way
-your mongo uri is openly shown in your github. There are two solutions to this. One is to add your development.js
+your mongo uri is openly shown in your github. There are two solutions to this. One is to add your config/env/development.js
 file to your .gitignore file so it will not be pushed to your gitHub. The other is to figure out the implementation of 
 environmental variables which is contained locally within your computer. Consult with the TA's about the best approach.
 The method provided here is a simple means of getting started quicker.
+****************************************************************************************************************************
 
+****************************************************************************************************************************
+## Post Mean-Install Guide
+If you haven't already gone through the Mean-Install Guide, please do that first.
+1)	Go into your terminal and do:
+```
+$ git clone https://github.com/CEN3031-Essie/Essie.git
+```
+
+this will create a folder called Essie that will contain all the files of the project and set up tracking to the repository. 
+If you want to ensure the remote is set up correctly you can type:
+```
+$ git remote –v 
+```
+2)	In your terminal go to that folder and run:
+```
+$ npm install			 
+```
+this will install the npm files locally within your folder.
+
+3)	Now your folder is all set up you need to make sure YOU can actually make changes to the GitHub. From the Mean-Install-Guide you’ll remember you set your global user.name and user.email. To see those again you can type in the terminal:
+
+```
+$git config user.name
+$git config user.email
+```
+
+Knowing your user.email, your scrum master should contact the GitHub owner to set you up as a member/ owner based off your email so that you can make changes to the GitHub repository. You should be all set to go.
+
+Other notes:
+
+If you type:
+
+```
+$ git branch –a
+```
+
+You can see all the branches that are currently on the repository. Anytime you run git fetch it will grab all branches currently on the repository. To link a local copy of that branch with the branch in the repository simply ‘checkout’ to that branch. 
+E.g. 
+```
+$ git checkout development 
+```
+will create a new local branch in your folder called development and will link it to the remotes origin/development.
+
+***************************************************************************************************************************
 ## Downloading MEAN.JS
 There are several ways you can get the MEAN.JS boilerplate:
 
@@ -112,13 +158,14 @@ After the install process is over, you'll be able to run your application using 
 ```
 $ grunt
 ```
-
-*NOTE: If there are any stylistic errors contained with your code (eslint (line indentation) errors, css errors, etc.)
+**************************************************************************************************************************
+NOTE: If there are any stylistic errors contained with your code (eslint (line indentation) errors, css errors, etc.)
 	running grunt will not work. You may however bypass it temporarily with:
 	
 ```
-$ grunt --force
+$ grunt --force 
 ```
+**************************************************************************************************************************
 
 Your application should run on port 3000 with the *development* environment configuration, so in your browser just go to [http://localhost:3000](http://localhost:3000)
 
