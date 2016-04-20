@@ -27,45 +27,50 @@ Make sure you have installed all of the following prerequisites on your developm
 	
 	2) Open up a shell (Windows users, open up the newly installed Git Bash ), and set your Name and Email
 	
-		a)git config ‐‐global user.name “ YOUR NAME ”
+		git config ‐‐global user.name “ YOUR NAME ”
 		
-		b)git config ‐‐global user.email “ YOUR_EMAIL
+		git config ‐‐global user.email “ YOUR_EMAIL
 		
 * Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager. If you encounter any problems, you can also use this [GitHub Gist](https://gist.github.com/isaacs/579814) to install Node.js.
   * Node v5 IS NOT SUPPORTED AT THIS TIME! 
   
   a) Mac OSX / Linux users: Follow these steps
   
-	i) Make a new global npm folder in your home (Or somewhere else that is owned by your user)
+	* Make a new global npm folder in your home (Or somewhere else that is owned by your user)
 	
-	ii) mkdir ~/.npm_global
+	* mkdir ~/.npm_global
 	
-	iii) Set the npm global prefix to that folder
+	* Set the npm global prefix to that folder
 	
-	iv) npm config set prefix ‘ ~/.npm_global ‘
+	* npm config set prefix ‘ ~/.npm_global ‘
 	
-	v) Add the new npm global folder to the PATH by adding the following line into your
+	* Add the new npm global folder to the PATH by adding the following line into your
 	~/.bash_profile or ~/.profile file (If it doesn’t exist, create it)
 	
-	vi) export PATH=~/.npm_global/bin:$PATH
+	* export PATH=~/.npm_global/bin:$PATH
 	
-	vii) Ubuntu/Debian users: Make sure that the version of nodejs that you are installing is v5.3.0 or
+	* Ubuntu/Debian users: Make sure that the version of nodejs that you are installing is v5.3.0 or
 	above. Follow these instructions to add a repository with the updated version of node
 	
-		(1) curl ‐sL https://deb.nodesource.com/setup_5.x | sudo ‐E bash
+		 curl ‐sL https://deb.nodesource.com/setup_5.x | sudo ‐E bash
 ‐
-		(2) sudo apt‐get install ‐y nodejs build‐essential
-		
-	viii) Linux users: npm might not be bundled with nodejs (check with npm ‐‐version). If so, use your
+		```
+		 sudo apt‐get install ‐y nodejs build‐essential
+		```
+	* Linux users: npm might not be bundled with nodejs (check with npm ‐‐version). If so, use your
 	favorite package manager to install npm.
 	
 * MongoDB - [Download & Install MongoDB](http://www.mongodb.org/downloads), and make sure it's running on the default port (27017).
 * Ruby - [Download & Install Ruby](https://www.ruby-lang.org/en/documentation/installation/)
+
 	a) Windows users, Make sure to install Ruby into your PATH. (An option in the installer)
+	
 	b) Mac OSX users, Ruby is already installed on your system (test this by running ruby ‐‐version in a
 	terminal window)
+	
 	c) Linux users, we recommend using RVM ( https://rvm.io/ ) since it doesn’t require root privileges, but
 	feel free to use your package manager as well.
+	
 * Bower - You're going to use the [Bower Package Manager](http://bower.io/) to manage your front-end packages. Make sure you've installed Node.js and npm first, then install bower globally using npm:
 
 ```bash
