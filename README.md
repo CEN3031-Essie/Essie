@@ -150,21 +150,6 @@ $ git config user.email
 
 Knowing your user.email, your scrum master should contact the GitHub owner to set you up as a member/ owner based off your email so that you can make changes to the GitHub repository. You should be all set to go.
 
-Other notes:
-
-If you type:
-
-```
-$ git branch –a
-```
-
-You can see all the branches that are currently on the repository. Anytime you run git fetch it will grab all branches currently on the repository. To link a local copy of that branch with the branch in the repository simply ‘checkout’ to that branch. 
-E.g. 
-```
-$ git checkout development 
-```
-will create a new local branch in your folder called development and will link it to the remotes origin/development.
-
 ***************************************************************************************************************************
 
 ## Running Your Application
