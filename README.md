@@ -95,8 +95,8 @@ this will install the npm files locally within your folder.
 3)	Now your folder is all set up you need to make sure YOU can actually make changes to the GitHub. From the Mean-Install-Guide you’ll remember you set your global user.name and user.email. To see those again you can type in the terminal:
 
 ```
-$git config user.name
-$git config user.email
+$ git config user.name
+$ git config user.email
 ```
 
 Knowing your user.email, your scrum master should contact the GitHub owner to set you up as a member/ owner based off your email so that you can make changes to the GitHub repository. You should be all set to go.
