@@ -142,9 +142,10 @@ Give the database a name and create it.
 Once it is created you should be able to see it under MongoDB Deployments on the homepage.
 Navigate to that database and look for the MongoDB URI.
 This URI is what you will use to connect your mean app to the mongoDB.
+(Make sure to create a database username so that you will have access to it, this is different than your account username you use to login to mlab).
 Copy that line and replace <dbuser> and <dbpassword> with your username and password (replace the <>'s too).
 Within your ESSIE file folder, go to the folder path: config/env/development.js
-On line 7 replace the comment "uri goes here" with the uri of your db contained in a string. You should be ready to go.
+On line 7 replace the comment "uri goes here" with the uri of your db contained in a single quote string. You should be ready to go.
 
 __NOTE__: This will not be the way to properly establish your mongo connection for final production. When doing it this way
 your mongo uri is openly shown in your github. There are two solutions to this. One is to add your config/env/development.js
@@ -153,7 +154,7 @@ environmental variables which is contained locally within your computer. Consult
 The method provided here is a simple means of getting started quicker.
 
 Also, once your database is created, all users and forms can be created through the use of the app. However to get a list of approvers, 
-you will have to input the datasets into a mongodb collection, either manually or through code implementation.
+you will have to input the datasets into a mongodb collection, either manually or through code implementation (the app will currently look for a collection by the name of 'approvers'; this can be changed in the forms.approver.server.model.js and server.controller).
 
 ***
 ## Running Your Application
