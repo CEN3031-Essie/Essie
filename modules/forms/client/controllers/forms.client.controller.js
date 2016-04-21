@@ -83,19 +83,17 @@
       });
     };
 
-    $scope.viewForm = function (id) {
-      $scope.id = id;
-      $scope.currentForm = FormsService.get({ formId: $scope.id }, function() {
-        console.log($scope.currentForm);
-        $state.go('forms.view-form');
-      });
-    };
-
+    //funtion to delete form from the saved forms list
+    //Add pop up to ask if the user is sure they want to delete, and add callback function to confirm successful deletion
     $scope.deleteForm = function (id) {
+      //takes the id provided when the function is called and stores it in the scope
       $scope.id = id;
+
+      //issues a get request to the database with the id provided from the saved form view
       $scope.currentForm = FormsService.get({ formId: $scope.id }, function() {
         console.log($scope.currentForm);
 
+        //issues a delete request to the database to delete the selected form
         $scope.currentForm.$delete(function() {
           $state.reload('forms.saved-list');
         });

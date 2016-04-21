@@ -11,7 +11,7 @@ var path = require('path'),
   nodemailer = require('nodemailer'),
   smtpTransport = require('nodemailer-smtp-transport'),
   transporter = nodemailer.createTransport(
-    smtpTransport('smtps://essieforms%40gmail.com:formspassword@smtp.gmail.com')
+    smtpTransport('') //insert email in here that will be used as transporter to send emails. See nodemailer documentation for format.
   );
 
 /**
@@ -44,9 +44,11 @@ exports.create = function (req, res, next) {
         message: errorHandler.getErrorMessage(err)
       });
     } else {
+      //Sends an email when a form is successfully saved to the database
+      //SEE nodemailer documentation to learn how to setup and use a transporter to send emails
       transporter.sendMail({
         from: 'EssieForms@email.com',
-        to: 'essiestudent1@gmail.com',
+        to: req.body.form.email,
         subject: 'Succesful Form Submission',
         text: 'Congrats ' + req.body.form.first_Name + '! You have succesfully submitted the ' + ft + ' form.'
       });
