@@ -21,7 +21,7 @@ Before you begin we recommend you read about the basic building blocks that asse
 * Node.js - Start by going through [Node.js Official Website](http://nodejs.org/) and this [StackOverflow Thread](http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js), which should get you going with the Node.js platform in no time.
 
 ***
-## Mean-Install-Guide
+## Mean Install Guide
 Make sure you have installed all of the following prerequisites on your development machine:
 * Setup Git
 
@@ -30,8 +30,8 @@ Make sure you have installed all of the following prerequisites on your developm
 	2) Open up a shell (Windows users, open up the newly installed Git Bash), and set your Name and Email:
 
     ```bash
-    git config ‐‐global user.name “ YOUR NAME ”
-    git config ‐‐global user.email “ YOUR_EMAIL
+    $ git config ‐‐global user.name “ YOUR NAME ”
+    $ git config ‐‐global user.email “ YOUR_EMAIL
     ```
 
 * Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager. If you encounter any problems, you can also use this [GitHub Gist](https://gist.github.com/isaacs/579814) to install Node.js.
@@ -55,8 +55,8 @@ Make sure you have installed all of the following prerequisites on your developm
 	* Ubuntu/Debian users: Make sure that the version of nodejs that you are installing is v5.3.0 or
 	above. Follow these instructions to add a repository with the updated version of node
 
-		```
-		 $ curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash
+		```bash
+		 $ curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash-
 		 $ sudo apt-get install -y nodejs build-essential
 		```
 	Linux users: npm might not be bundled with nodejs (check with npm --version). If so, use your
@@ -102,10 +102,10 @@ $ npm install gulp -g
 ```
 
 ***
-## Post Mean-Install Guide
-If you haven't already gone through the Mean-Install Guide, please do that first.
+## Post Mean Install Guide
+If you haven't already gone through the Mean Install Guide, please do that first.
 
-1)	Go into your terminal and clone the github repo by:
+1)	Go into your terminal and clone the Essie github repo with:
 ```
 $ git clone https://github.com/CEN3031-Essie/Essie.git
 ```
@@ -120,7 +120,7 @@ $ git remote –v
 $ npm install			 
 ```
 This command does a few things:
-* First it will install the dependencies needed for the application to run.
+* First, it will install the dependencies needed for the application to run.
 * If you're running in a development environment, it will then also install development dependencies needed for testing and running your application.
 * Finally, when the install process is over, npm will initiate a bower install command to install all the front-end modules needed for the application
 
@@ -152,6 +152,8 @@ file to your .gitignore file so it will *not* be pushed to your gitHub. The othe
 environmental variables which is contained locally within your computer. Consult with the TA's about the best approach.
 The method provided here is a simple means of getting started quicker.
 
+Also, once your database is created, all users and forms can be created through the use of the app. However to get a list of approvers, 
+you will have to input the datasets into a mongodb collection, either manually or through code implementation.
 
 ***
 ## Running Your Application
