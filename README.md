@@ -1,4 +1,8 @@
 ![Essie Logo](modules/core/client/img/brand/uf_essie_logo.PNG)
+---
+This Webapp has been designed for the University of Florida Environmental Engineering Department to streamline their form submission and record-keeping process.
+---
+***
 [![MEAN.JS Logo](http://meanjs.org/img/logo-small.png)](http://meanjs.org/)
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/meanjs/mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -174,15 +178,34 @@ __NOTE__: Your application should run on port 3000 with the *development* enviro
 ## List of implemented features
 
 + UF 2015 CSS Template
+
+![Home Page](screenshots/homepage.jpg)
+
 + List of implemented forms
+
+![Forms List](screenshots/formlist.jpg)
+
 + Prepopulate form information with session variables
 + Prepopulate certain form fields with saved datasets
+
+![Form](screenshots/form.jpg)
+
 + Submit forms to database
+
+![Submit Form](screenshots/submission.jpg)
+
 + Email notification system for user submitted forms
+
+![Email](screenshots/email.jpg)
 + Administrator authentication & security system
 + List of saved forms (administrator only)
-+ View individual saved forms (administrator only)
+
+![Saved List](screenshots/savedformlist.jpg)
+
 + Delete individual saved forms (administrator only)
++ View individual saved forms (administrator only)
+
+![View Form](screenshots/savedform.jpg)
 
 ***
 ## Credits/Borrowed Code
