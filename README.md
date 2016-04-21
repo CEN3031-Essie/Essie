@@ -179,33 +179,33 @@ __NOTE__: Your application should run on port 3000 with the *development* enviro
 
 + UF 2015 CSS Template
 
-![Home Page](screenshots/homepage.jpg)
+![Home Page](screenshots/homepage.JPG)
 
 + List of implemented forms
 
-![Forms List](screenshots/formlist.jpg)
+![Forms List](screenshots/formlist.JPG)
 
 + Prepopulate form information with session variables
 + Prepopulate certain form fields with saved datasets
 
-![Form](screenshots/form.jpg)
+![Form](screenshots/form.JPG)
 
 + Submit forms to database
 
-![Submit Form](screenshots/submission.jpg)
+![Submit Form](screenshots/submission.JPG)
 
 + Email notification system for user submitted forms
 
-![Email](screenshots/email.jpg)
+![Email](screenshots/email.JPG)
 + Administrator authentication & security system
 + List of saved forms (administrator only)
 
-![Saved List](screenshots/savedformlist.jpg)
+![Saved List](screenshots/savedformlist.JPG)
 
 + Delete individual saved forms (administrator only)
 + View individual saved forms (administrator only)
 
-![View Form](screenshots/savedform.jpg)
+![View Form](screenshots/savedform.JPG)
 
 ***
 ## Credits/Borrowed Code
