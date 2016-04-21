@@ -188,7 +188,7 @@ __NOTE__: Your application should run on port 3000 with the *development* enviro
 ## Credits/Borrowed Code
 * Inspired by the great work of [Madhusudhan Srinivasa](https://github.com/madhums/)
 * The MEAN name was coined by [Valeri Karpov](http://blog.mongodb.org/post/49262866911/the-mean-stack-mongodb-expressjs-angularjs-and)
-*[Nodemailer](https://nodemailer.com/) was used to implement the email notification system (modules/forms/server/controllers/forms.server.controller.js)
+* [Nodemailer](https://nodemailer.com/) was used to implement the email notification system (modules/forms/server/controllers/forms.server.controller.js)
 
 ***
 ## License
