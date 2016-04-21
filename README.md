@@ -196,7 +196,7 @@ __NOTE__: Your application should run on port 3000 with the *development* enviro
 
 + Email notification system for user submitted forms
 
-![Email](screenshots/email.JPG)
+![Email](screenshots/successemail.JPG)
 + Administrator authentication & security system
 + List of saved forms (administrator only)
 
