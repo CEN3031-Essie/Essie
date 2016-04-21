@@ -21,7 +21,7 @@ Before you begin we recommend you read about the basic building blocks that asse
 * Node.js - Start by going through [Node.js Official Website](http://nodejs.org/) and this [StackOverflow Thread](http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js), which should get you going with the Node.js platform in no time.
 
 ***
-## Mean Install Guide
+## MEAN Install Guide
 Make sure you have installed all of the following prerequisites on your development machine:
 * Setup Git
 
@@ -102,7 +102,7 @@ $ npm install gulp -g
 ```
 
 ***
-## Post Mean Install Guide
+## Post MEAN Install Guide
 If you haven't already gone through the Mean Install Guide, please do that first.
 
 1)	Go into your terminal and clone the Essie github repo with:
@@ -154,7 +154,7 @@ environmental variables which is contained locally within your computer. Consult
 The method provided here is a simple means of getting started quicker.
 
 Also, once your database is created, all users and forms can be created through the use of the app. However to get a list of approvers, 
-you will have to input the datasets into a mongodb collection, either manually or through code implementation (the app will currently look for a collection by the name of 'approvers'; this can be changed in the forms.approver.server.model.js and server.controller).
+you will have to input the datasets into a mongodb collection, either manually or through code implementation (the app will currently look for a collection by the name of 'approvers'; this can be changed in the forms.approver.server.model.js and forms.server.controller.js).
 
 ***
 ## Running Your Application
