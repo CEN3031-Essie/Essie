@@ -30,8 +30,8 @@ Make sure you have installed all of the following prerequisites on your developm
 	2) Open up a shell (Windows users, open up the newly installed Git Bash), and set your Name and Email:
 
     ```bash
-    $ git config ‐‐global user.name “ YOUR NAME ”
-    $ git config ‐‐global user.email “ YOUR_EMAIL
+    $ git config ‐‐global user.name “YOUR NAME”
+    $ git config ‐‐global user.email “YOUR_EMAIL”
     ```
 
 * Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager. If you encounter any problems, you can also use this [GitHub Gist](https://gist.github.com/isaacs/579814) to install Node.js.
@@ -103,7 +103,7 @@ $ npm install gulp -g
 
 ***
 ## Post MEAN Install Guide
-If you haven't already gone through the Mean Install Guide, please do that first.
+If you haven't already gone through the MEAN Install Guide, please do that first.
 
 1)	Go into your terminal and clone the Essie github repo with:
 ```
