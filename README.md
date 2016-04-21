@@ -1,5 +1,4 @@
-# _ESSIE README_
-
+![Essie Logo](modules/core/client/img/brand/uf_essie_logo.PNG)
 [![MEAN.JS Logo](http://meanjs.org/img/logo-small.png)](http://meanjs.org/)
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/meanjs/mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -145,7 +144,7 @@ On line 7 replace the comment "uri goes here" with the uri of your db contained 
 
 __NOTE__: This will not be the way to properly establish your mongo connection for final production. When doing it this way
 your mongo uri is openly shown in your github. There are two solutions to this. One is to add your config/env/development.js
-file to your .gitignore file so it will not be pushed to your gitHub. The other is to figure out the implementation of
+file to your .gitignore file so it will *not* be pushed to your gitHub. The other is to figure out the implementation of
 environmental variables which is contained locally within your computer. Consult with the TA's about the best approach.
 The method provided here is a simple means of getting started quicker.
 
@@ -164,10 +163,10 @@ __NOTE__: If there are any stylistic errors contained with your code (eslint (li
 $ grunt --force
 ```
 
-__NOTE__: Your application should run on port 3000 with the *development* environment configuration, so in your browser just go to [http://localhost:3000](http://localhost:3000)
-
 That's it! Your application should be running. To proceed with your development, check the other sections in this documentation.
 If you encounter any problems, try the Troubleshooting section.
+
+__NOTE__: Your application should run on port 3000 with the *development* environment configuration, so in your browser just go to [http://localhost:3000](http://localhost:3000)
 
 * explore `config/env/development.js` for development environment configuration options
 
@@ -187,8 +186,8 @@ If you encounter any problems, try the Troubleshooting section.
 
 ***
 ## Credits
-Inspired by the great work of [Madhusudhan Srinivasa](https://github.com/madhums/)
-The MEAN name was coined by [Valeri Karpov](http://blog.mongodb.org/post/49262866911/the-mean-stack-mongodb-expressjs-angularjs-and)
+* Inspired by the great work of [Madhusudhan Srinivasa](https://github.com/madhums/)
+* The MEAN name was coined by [Valeri Karpov](http://blog.mongodb.org/post/49262866911/the-mean-stack-mongodb-expressjs-angularjs-and)
 
 ***
 ## License
