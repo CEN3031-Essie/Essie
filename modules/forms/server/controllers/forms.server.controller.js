@@ -11,7 +11,7 @@ var path = require('path'),
   nodemailer = require('nodemailer'),
   smtpTransport = require('nodemailer-smtp-transport'),
   transporter = nodemailer.createTransport(
-    smtpTransport('smtps://essieforms%40gmail.com:formspassword@smtp.gmail.com')
+    smtpTransport('') //insert email in here that will be used as transporter to send emails. See nodemailer documentation for format.
   );
 
 /**
@@ -22,6 +22,9 @@ exports.create = function (req, res, next) {
   var form;
   var ft;
 
+  // selects the type of object to create based on the type of form
+  // each object has a different schema to follow based on the forms' fields
+  // TODO: combine all form types into a general object that can handle all types of forms dynamically
   if(req.body.form.formType === 'phd-committee'){
     form = new PhDCommitteeForm(req.body.form);
     ft = 'Ph.D. Program Supervisory Committee';
@@ -41,9 +44,11 @@ exports.create = function (req, res, next) {
         message: errorHandler.getErrorMessage(err)
       });
     } else {
+      //Sends an email when a form is successfully saved to the database
+      //SEE nodemailer documentation to learn how to setup and use a transporter to send emails
       transporter.sendMail({
         from: 'EssieForms@email.com',
-        to: 'essiestudent1@gmail.com',
+        to: req.body.form.email,
         subject: 'Succesful Form Submission',
         text: 'Congrats ' + req.body.form.first_Name + '! You have succesfully submitted the ' + ft + ' form.'
       });
@@ -60,6 +65,7 @@ exports.read = function (req, res) {
   res.json(req.form);
 };
 
+// TODO: implement approve or deny implementationa and update the status of the form
 /**
  * Update an form
  */
@@ -114,6 +120,9 @@ exports.listApprover = function (req, res) {
  * List of PhDCommitteeForms
  */
 exports.list = function (req, res) {
+	/*TO-DO: currently this will only find PHDforms. Some form of conditional,
+	(if/else) should be implemented to determine which type of form it is and
+	list that form.*/
   PhDCommitteeForm.find().sort('-created').exec(function (err, forms) {
     if (err) {
       return res.status(400).send({

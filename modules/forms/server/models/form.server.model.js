@@ -6,6 +6,8 @@
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
+
+// TODO: implement server-side validation and authentication of filled in data
 /**
  * Form Schema
  */
@@ -37,12 +39,6 @@ var PhDCommitteeSchema = new Schema({
     default: '',
     trim: true
   },
-  // full_Name: {
-  //   type: String,
-  //   default: '',
-  //   trim: true,
-  //   required: true
-  // },
   uf_id: {
     type: String,
     default: '',
@@ -55,11 +51,15 @@ var PhDCommitteeSchema = new Schema({
     trim: true,
     required: true
   },
+  // TODO: add gatorlink to form schema
   // gatorlink: {
   //   type: String,
   //   default: '',
   //   trim: true,
   // },
+
+  // TODO: add object references to these approvers in the database when available
+  // TODO: add a boolean value to each member to account for approval status, add String to hold reason for denail if denied
   Chair: {
     name: {
       type: String,
@@ -130,10 +130,14 @@ var PhDCommitteeSchema = new Schema({
     type: String,
     required: true
   },
+  // TODO: implement this type of referencing with approvers already in database
   user: {
     type: Schema.ObjectId,
     ref: 'User'
   },
 });
 
+/*when exporting this model it will go by the name of the first argument.
+the third paramater is used to redirect all models of schemas to a specific
+collection within mongolab, in this case, forms*/
 mongoose.model('PhDCommitteeForm', PhDCommitteeSchema, 'forms');

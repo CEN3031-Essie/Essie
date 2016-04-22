@@ -1,5 +1,76 @@
-<section ng-controller="FormController">
-	<p>{{currentForm.first_Name}}</p>
+<head>
+  <link rel="stylesheet" type="text/css" href="view-form.client.view.css">
+</head>
 
-	<button ng-click="showForm()">show</button>
+<section>
+
+	<div class="panel panel-primary">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Form Information</h3>
+	  </div>
+	  <div class="panel-body">
+	    <h3> Form Type: </h3> {{viewingForm.formType}}
+	  </div>
+	</div>
+
+	<div class="panel panel-primary">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Student Information</h3>
+	  </div>
+	  <div class="panel-body">
+	    <h3> Term: </h3> {{viewingForm.Term}}
+	  </div>
+	  <div class="panel-body">
+	    <h3> Name: </h3>  {{viewingForm.last_Name}}, {{viewingForm.first_Name}} {{viewingForm.m_Initial}}
+	  </div>
+	  <div class="panel-body">
+	    <h3> UFID: </h3> {{viewingForm.uf_id}}
+	  </div>
+	  <div class="panel-body">
+	    <h3> Email Address: </h3> {{viewingForm.email}}
+	  </div>
+	</div>
+
+	<div class="panel panel-primary">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Committee Information</h3>
+	  </div>
+	  <div class="panel-body">
+	    <h3> Chair Name: </h3> {{viewingForm.Chair.name}}
+	     <p></p> 
+	    <h3> Department: </h3> {{viewingForm.Chair.department}}
+	  </div>
+
+	  <div class="panel-body">
+	    <h3> Co-Chair Name: </h3> {{viewingForm.co_Chair.name}} 
+	     <p></p>
+	    <h3 class="Department"> Department: </h3> {{viewingForm.co_Chair.department}}
+	  </div>
+
+	  <div class="panel-body">
+	    <h3> Member Name: </h3> {{viewingForm.member_1.name}}
+	     <p></p>
+	    <h3> Department: </h3> {{viewingForm.member_1.department}}
+	  </div>
+
+	  <div class="panel-body">
+	    <h3> Member Name: </h3> {{viewingForm.member_2.name}} 
+	     <p></p>
+	    <h3> Department: </h3> {{viewingForm.member_2.department}}
+	  </div>
+
+	  <div class="panel-body">
+	    <h3> Member Name: </h3> {{viewingForm.member_3.name}} 
+	     <p></p>
+	    <h3> Department: </h3> {{viewingForm.member_3.department}}
+	  </div>
+
+	  <div class="panel-body">
+	    <h3> External Member Name: </h3> {{viewingForm.external.name}} 
+	     <p></p>
+	    <h3> Department: </h3> {{viewingForm.external.department}}
+	  </div>
+
+	</div>
+
 </section>

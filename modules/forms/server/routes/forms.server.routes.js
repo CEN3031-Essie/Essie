@@ -7,17 +7,16 @@ var formsPolicy = require('../policies/forms.server.policy'),
   forms = require('../controllers/forms.server.controller');
 
 module.exports = function (app) {
-  // GForms collection routes
+	// route to access list of approvers
   app.route('/api/approvers')
     .get(forms.listApprover);
 
+  	// Forms collection routes
   app.route('/api/forms').all(formsPolicy.isAllowed)
     .get(forms.list)
     .post(forms.create);
 
-
-  //app.route('/api/approvers')
-  // Single gform routes
+  // Single form routes
   app.route('/api/forms/:formId').all(formsPolicy.isAllowed)
     .get(forms.read)
     //.put(forms.update)

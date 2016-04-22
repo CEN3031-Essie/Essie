@@ -6,6 +6,7 @@
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
+// TODO: implement server-side validation and authentication of filled in data
 /**
  * Form Schema
  */

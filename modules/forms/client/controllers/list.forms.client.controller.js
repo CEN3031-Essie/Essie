@@ -1,6 +1,9 @@
 (function () {
   'use strict';
 
+  // controller specifically for the view of all possible forms
+  // TODO: move logic from html view into controller
+  // TODO: add additional logic for view adjustment and authentication
   angular.module('forms').controller('FormsListController', FormsListController);
 
   FormsListController.$inject = ['$scope', '$state', 'Authentication'];

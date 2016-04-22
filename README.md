@@ -1,3 +1,8 @@
+![Essie Logo](modules/core/client/img/brand/uf_essie_logo.PNG)
+---
+This Webapp has been designed for the University of Florida Environmental Engineering Department to streamline their form submission and record-keeping process.
+---
+***
 [![MEAN.JS Logo](http://meanjs.org/img/logo-small.png)](http://meanjs.org/)
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/meanjs/mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -7,6 +12,7 @@
 
 MEAN.JS is a full-stack JavaScript open-source solution, which provides a solid starting point for [MongoDB](http://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](http://angularjs.org/) based applications. The idea is to solve the common issues with connecting those frameworks, build a robust framework to support daily development needs, and help developers use better practices while working with popular JavaScript components.
 
+***
 ## Before You Begin
 Before you begin we recommend you read about the basic building blocks that assemble a MEAN.JS application:
 * MongoDB - Go through [MongoDB Official Website](http://mongodb.org/) and proceed to their [Official Manual](http://docs.mongodb.org/manual/), which should help you understand NoSQL and MongoDB better.
@@ -14,13 +20,59 @@ Before you begin we recommend you read about the basic building blocks that asse
 * AngularJS - Angular's [Official Website](http://angularjs.org/) is a great starting point. You can also use [Thinkster Popular Guide](http://www.thinkster.io/), and the [Egghead Videos](https://egghead.io/).
 * Node.js - Start by going through [Node.js Official Website](http://nodejs.org/) and this [StackOverflow Thread](http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js), which should get you going with the Node.js platform in no time.
 
-
-## Prerequisites
+***
+## MEAN Install Guide
 Make sure you have installed all of the following prerequisites on your development machine:
+* Setup Git
+
+	1) Download the Git installer here (http://www.git‐scm.com/downloads) and choose the default values.
+
+	2) Open up a shell (Windows users, open up the newly installed Git Bash), and set your Name and Email:
+
+    ```bash
+    $ git config ‐‐global user.name “YOUR NAME”
+    $ git config ‐‐global user.email “YOUR_EMAIL”
+    ```
+
 * Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager. If you encounter any problems, you can also use this [GitHub Gist](https://gist.github.com/isaacs/579814) to install Node.js.
-  * Node v5 IS NOT SUPPORTED AT THIS TIME! 
+  * __Node v5.3 or older IS NOT SUPPORTED AT THIS TIME!__
+
+  a) Mac OSX / Linux users: Follow these steps:
+
+	* Make a new global npm folder in your home (Or somewhere else that is owned by your user)
+
+	* mkdir ~/.npm_global
+
+	* Set the npm global prefix to that folder
+
+	* npm config set prefix ‘ ~/.npm_global ‘
+
+	* Add the new npm global folder to the PATH by adding the following line into your
+	~/.bash_profile or ~/.profile file (If it doesn’t exist, create it)
+
+	* export PATH=~/.npm_global/bin:$PATH
+
+	* Ubuntu/Debian users: Make sure that the version of nodejs that you are installing is v5.3.0 or
+	above. Follow these instructions to add a repository with the updated version of node
+
+	```
+	 $ curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash-
+	 $ sudo apt-get install -y nodejs build-essential
+	```
+	Linux users: npm might not be bundled with nodejs (check with npm --version). If so, use your
+	favorite package manager to install npm.
+
 * MongoDB - [Download & Install MongoDB](http://www.mongodb.org/downloads), and make sure it's running on the default port (27017).
 * Ruby - [Download & Install Ruby](https://www.ruby-lang.org/en/documentation/installation/)
+
+	a) Windows users, Make sure to install Ruby into your PATH. (An option in the installer)
+
+	b) Mac OSX users, Ruby is already installed on your system (test this by running ruby ‐‐version in a
+	terminal window)
+
+	c) Linux users, we recommend using RVM ( https://rvm.io/ ) since it doesn’t require root privileges, but
+	feel free to use your package manager as well.
+
 * Bower - You're going to use the [Bower Package Manager](http://bower.io/) to manage your front-end packages. Make sure you've installed Node.js and npm first, then install bower globally using npm:
 
 ```bash
@@ -49,258 +101,122 @@ $ npm install -g grunt-cli
 $ npm install gulp -g
 ```
 
-## Downloading MEAN.JS
-There are several ways you can get the MEAN.JS boilerplate:
+***
+## Post MEAN Install Guide
+If you haven't already gone through the MEAN Install Guide, please do that first.
 
-### Cloning The GitHub Repository
-The recommended way to get MEAN.js is to use git to directly clone the MEAN.JS repository:
-
-```bash
-$ git clone https://github.com/meanjs/mean.git meanjs
+1)	Go into your terminal and clone the Essie github repo with:
+```
+$ git clone https://github.com/CEN3031-Essie/Essie.git
 ```
 
-This will clone the latest version of the MEAN.JS repository to a **meanjs** folder.
-
-### Downloading The Repository Zip File
-Another way to use the MEAN.JS boilerplate is to download a zip copy from the [master branch on GitHub](https://github.com/meanjs/mean/archive/master.zip). You can also do this using `wget` command:
-
-```bash
-$ wget https://github.com/meanjs/mean/archive/master.zip -O meanjs.zip; unzip meanjs.zip; rm meanjs.zip
+This will create a folder called Essie that will contain all the files of the project and set up tracking to the repository.
+If you want to ensure the remote is set up correctly you can type:
 ```
-
-Don't forget to rename **mean-master** after your project name.
-
-### Yo Generator
-Another way would be to use the [Official Yo Generator](http://meanjs.org/generator.html), which generates a copy of the MEAN.JS 0.4.x boilerplate and supplies an application generator to ease your daily development cycles.
-
-## Quick Install
-Once you've downloaded the boilerplate and installed all the prerequisites, you're just a few steps away from starting to develop your MEAN application.
-
-The first thing you should do is install the Node.js dependencies. The boilerplate comes pre-bundled with a package.json file that contains the list of modules you need to start your application. To learn more about the modules installed visit the NPM & Package.json section.
-
-To install Node.js dependencies you're going to use npm again. In the application folder run this in the command-line:
-
-```bash
-$ npm install
+$ git remote –v
 ```
-
+2)	In your terminal go to that folder and run:
+```
+$ npm install			 
+```
 This command does a few things:
-* First it will install the dependencies needed for the application to run.
+* First, it will install the dependencies needed for the application to run.
 * If you're running in a development environment, it will then also install development dependencies needed for testing and running your application.
 * Finally, when the install process is over, npm will initiate a bower install command to install all the front-end modules needed for the application
 
+3)	Now your folder is all set up you need to make sure YOU can actually make changes to the GitHub. From the Mean-Install-Guide you’ll remember you set your global user.name and user.email. To see those again you can type in the terminal:
+
+```
+$ git config user.name
+$ git config user.email
+```
+
+Knowing your user.email, your scrum master should contact the GitHub owner to set you up as a member/ owner based off your email so that you can make changes to the GitHub repository. You should be all set to go.
+
+***
+## Setting up your mongodb
+If you haven't already signed up for a mongolab account, do so at www.mlab.com.
+Once you do that, hit create new to create a new database.
+you will most probably create an AWS single-node sandbox.
+Give the database a name and create it.
+Once it is created you should be able to see it under MongoDB Deployments on the homepage.
+Navigate to that database and look for the MongoDB URI.
+This URI is what you will use to connect your mean app to the mongoDB.
+(Make sure to create a database username so that you will have access to it, this is different than your account username you use to login to mlab).
+Copy that line and replace <dbuser> and <dbpassword> with your username and password (replace the <>'s too).
+Within your ESSIE file folder, go to the folder path: config/env/development.js
+On line 7 replace the comment "uri goes here" with the uri of your db contained in a single quote string. You should be ready to go.
+
+__NOTE__: This will not be the way to properly establish your mongo connection for final production. When doing it this way
+your mongo uri is openly shown in your github. There are two solutions to this. One is to add your config/env/development.js
+file to your .gitignore file so it will *not* be pushed to your gitHub. The other is to figure out the implementation of
+environmental variables which is contained locally within your computer. Consult with the TA's about the best approach.
+The method provided here is a simple means of getting started quicker.
+
+Also, once your database is created, all users and forms can be created through the use of the app. However to get a list of approvers, 
+you will have to input the datasets into a mongodb collection, either manually or through code implementation (the app will currently look for a collection by the name of 'approvers'; this can be changed in the forms.approver.server.model.js and forms.server.controller.js).
+
+***
 ## Running Your Application
 After the install process is over, you'll be able to run your application using Grunt, just run grunt default task:
 
 ```
 $ grunt
 ```
+__NOTE__: If there are any stylistic errors contained with your code (eslint (line indentation) errors, css errors, etc.)
+	running grunt will not work. You may however bypass it temporarily with:
 
-Your application should run on port 3000 with the *development* environment configuration, so in your browser just go to [http://localhost:3000](http://localhost:3000)
+```
+$ grunt --force
+```
 
 That's it! Your application should be running. To proceed with your development, check the other sections in this documentation.
 If you encounter any problems, try the Troubleshooting section.
 
+__NOTE__: Your application should run on port 3000 with the *development* environment configuration, so in your browser just go to [http://localhost:3000](http://localhost:3000)
+
 * explore `config/env/development.js` for development environment configuration options
 
-### Running in Production mode
-To run your application with *production* environment configuration, execute grunt as follows:
+***
+## List of implemented features
 
-```bash
-$ grunt prod
-```
++ UF 2015 CSS Template
 
-* explore `config/env/production.js` for production environment configuration options
+![Home Page](screenshots/homepage.JPG)
 
-### Running with User Seed
-To have default account(s) seeded at runtime:
++ List of implemented forms
 
-In Development:
-```bash
-MONGO_SEED=true grunt
-```
-It will try to seed the users 'user' and 'admin'. If one of the user already exists, it will display an error message on the console. Just grab the passwords from the console.
+![Forms List](screenshots/formlist.JPG)
 
-In Production:
-```bash
-MONGO_SEED=true grunt prod
-```
-This will seed the admin user one time if the user does not already exist. You have to copy the password from the console and save it.
++ Prepopulate form information with session variables
++ Prepopulate certain form fields with saved datasets
 
-### Running with TLS (SSL)
-Application will start by default with secure configuration (SSL mode) turned on and listen on port 8443.
-To run your application in a secure manner you'll need to use OpenSSL and generate a set of self-signed certificates. Unix-based users can use the following command:
+![Form](screenshots/form.JPG)
 
-```bash
-$ sh ./scripts/generate-ssl-certs.sh
-```
++ Submit forms to database
 
-Windows users can follow instructions found [here](http://www.websense.com/support/article/kbarticle/How-to-use-OpenSSL-and-Microsoft-Certification-Authority).
-After you've generated the key and certificate, place them in the *config/sslcerts* folder.
+![Submit Form](screenshots/submission.JPG)
 
-Finally, execute grunt's prod task `grunt prod`
-* enable/disable SSL mode in production environment change the `secure` option in `config/env/production.js`
++ Email notification system for user submitted forms
 
+![Email](screenshots/successemail.JPG)
++ Administrator authentication & security system
++ List of saved forms (administrator only)
 
-## Testing Your Application
-You can run the full test suite included with MEAN.JS with the test task:
+![Saved List](screenshots/savedformlist.JPG)
 
-```bash
-$ grunt test
-```
++ Delete individual saved forms (administrator only)
++ View individual saved forms (administrator only)
 
-This will run both the server-side tests (located in the app/tests/ directory) and the client-side tests (located in the public/modules/*/tests/).
+![View Form](screenshots/savedform.JPG)
 
-To execute only the server tests, run the test:server task:
+***
+## Credits/Borrowed Code
+* Inspired by the great work of [Madhusudhan Srinivasa](https://github.com/madhums/)
+* The MEAN name was coined by [Valeri Karpov](http://blog.mongodb.org/post/49262866911/the-mean-stack-mongodb-expressjs-angularjs-and)
+* [Nodemailer](https://nodemailer.com/) was used to implement the email notification system (modules/forms/server/controllers/forms.server.controller.js)
 
-```bash
-$ grunt test:server
-```
-
-And to run only the client tests, run the test:client task:
-
-```bash
-$ grunt test:client
-```
-
-## Running your application with Gulp
-
-After the install process, you can easily run your project with:
-
-```bash
-$ gulp
-```
-or
-
-```bash
-$ gulp default
-```
-
-The server is now running on http://localhost:3000 if you are using the default settings. 
-
-### Running Gulp Development Environment
-
-Start the development environment with:
-
-```bash
-$ gulp dev
-```
-
-### Running in Production mode
-To run your application with *production* environment configuration, execute gulp as follows:
-
-```bash
-$ gulp prod
-```
-
-### Testing Your Application with Gulp
-Using the full test suite included with MEAN.JS with the test task:
-
-### Run all tests
-```bash
-$ gulp test
-```
-
-### Run server tests
-```bash
-gulp test:server
-```
-
-### Run client tests
-```bash
-gulp test:client
-```
-
-### Run e2e tests
-```bash
-gulp test:e2e
-```
-
-## Development and deployment With Docker
-
-* Install [Docker](https://docs.docker.com/installation/#installation)
-* Install [Compose](https://docs.docker.com/compose/install/)
-
-* Local development and testing with compose:
-```bash
-$ docker-compose up
-```
-
-* Local development and testing with just Docker:
-```bash
-$ docker build -t mean .
-$ docker run -p 27017:27017 -d --name db mongo
-$ docker run -p 3000:3000 --link db:db_1 mean
-$
-```
-
-* To enable live reload, forward port 35729 and mount /app and /public as volumes:
-```bash
-$ docker run -p 3000:3000 -p 35729:35729 -v /Users/mdl/workspace/mean-stack/mean/public:/home/mean/public -v /Users/mdl/workspace/mean-stack/mean/app:/home/mean/app --link db:db_1 mean
-```
-
-## Getting Started With MEAN.JS
-You have your application running, but there is a lot of stuff to understand. We recommend you go over the [Official Documentation](http://meanjs.org/docs.html).
-In the docs we'll try to explain both general concepts of MEAN components and give you some guidelines to help you improve your development process. We tried covering as many aspects as possible, and will keep it updated by your request. You can also help us develop and improve the documentation by checking out the *gh-pages* branch of this repository.
-
-## Community
-* Use the [Official Website](http://meanjs.org) to learn about changes and the roadmap.
-* Join #meanjs on freenode.
-* Discuss it in the new [Google Group](https://groups.google.com/d/forum/meanjs)
-* Ping us on [Twitter](http://twitter.com/meanjsorg) and [Facebook](http://facebook.com/meanjs)
-
-## Contributing
-We welcome pull requests from the community! Just be sure to read the [contributing](https://github.com/meanjs/mean/blob/master/CONTRIBUTING.md) doc to get started.
-
-## Deploying To Cloud Foundry
-
-Cloud Foundry is an open source platform-as-a-service (PaaS).  The MEANJS project
-can easily be deployed to any Cloud Foundry instance.  The easiest way to deploy the
-MEANJS project to Cloud Foundry is to use a public hosted instance.  The two most popular
-instances are [Pivotal Web Services](https://run.pivotal.io/) and
-[IBM Bluemix](https://bluemix.net).  Both provide free trials and support pay-as-you-go models
-for hosting applications in the cloud.  After you have an account follow the below steps to deploy MEANJS.
-
-* Install the [Cloud Foundry command line tools](http://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html).
-* Now you need to log into Cloud Foundry from the Cloud Foundry command line.
-  *  If you are using Pivotal Web Services run `$ cf login -a api.run.pivotal.io`.
-  *  If you are using IBM Bluemix run `$ cf login -a api.ng.bluemix.net`.
-* Create a Mongo DB service.
-+  *  If you are using Pivotal Web Services run `$ cf create-service mongolab sandbox mean-mongo`
-+  *  If you are using IBM Bluemix run `$ cf create-service mongodb 100 mean-mongo`
-* Clone the GitHub repo for MEANJS if you have not already done so
-  * `$ git clone https://github.com/meanjs/mean.git && cd mean`
-* Run `$ npm install`
-* Run the Grunt Build task to build the optimized JavaScript and CSS files
-  * `$ grunt build`
-* Deploy MEANJS to Cloud Foundry
-  * `$ cf push`
-
-After `cf push` completes you will see the URL to your running MEANJS application 
-(your URL will be different).
-
-    requested state: started
-    instances: 1/1
-    usage: 128M x 1 instances
-    urls: mean-humbler-frappa.mybluemix.net
-
-Open your browser and go to that URL and your should see your MEANJS app running!
-
-###  Deploying MEANJS To IBM Bluemix
-IBM Bluemix is a Cloud Foundry based PaaS.  By clicking the button below you can signup for Bluemix and deploy
-a working copy of MEANJS to the cloud without having to do the steps above.
-
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https%3A%2F%2Fgithub.com%2Fmeanjs%2Fmean)
-
-After the deployment is finished you will be left with a copy of the MEANJS code in your own private Git repo
-in Bluemix complete with a pre-configured build and deploy pipeline.  Just clone the Git repo, make your changes, and
-commit them back.  Once your changes are committed, the build and deploy pipeline will run automatically deploying
-your changes to Bluemix.
-
-## Credits
-Inspired by the great work of [Madhusudhan Srinivasa](https://github.com/madhums/)
-The MEAN name was coined by [Valeri Karpov](http://blog.mongodb.org/post/49262866911/the-mean-stack-mongodb-expressjs-angularjs-and)
-
+***
 ## License
 (The MIT License)
 
